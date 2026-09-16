@@ -1,15 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Spawn Settings")]
-    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private List<GameObject> _curEnemyPrefabs;
 
     [SerializeField] private float _spawnInterval = 2f;
     [SerializeField] private float _minSpawnDistance = 5f;
     [SerializeField] private float _maxSpawnDistance = 10f;
 
     private float _spawnTimer;
+    private float _enemyHealthMultiplier = 1f;
 
     private void Update()
     {
@@ -45,10 +46,25 @@ public class EnemySpawner : MonoBehaviour
             lookDirection.y,
             lookDirection.x
         ) * Mathf.Rad2Deg - 90f;
+        int getRandomIdx = Random.Range(0, _curEnemyPrefabs.Count);
         
-        PoolManager.Instance.EnemyPoolFactory.Get(_enemyPrefab,spawnPosition,Quaternion.Euler(0f, 0f, rotationZ));
+        GameObject enemyObject = PoolManager.Instance.EnemyPoolFactory.Get(
+            _curEnemyPrefabs[getRandomIdx],
+            spawnPosition,
+            Quaternion.Euler(0f, 0f, rotationZ));
 
-       
+        Enemy enemy = enemyObject.GetComponent<Enemy>();
+        enemy.ApplyHealthMultiplier(_enemyHealthMultiplier);
+        
+    }
 
+    public void AddSpawnableEnemy(GameObject enemyPrefab)
+    {
+        _curEnemyPrefabs.Add(enemyPrefab);
+    }
+
+    public void SetEnemyHealthMultiplier(float multiplier)
+    {
+        _enemyHealthMultiplier = Mathf.Max(0f, multiplier);
     }
 }

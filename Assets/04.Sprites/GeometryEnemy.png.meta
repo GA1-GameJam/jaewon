@@ -232,7 +232,7 @@ TextureImporter:
       name: GeometryEnemy_2
       rect:
         serializedVersion: 2
-        x: 334
+        x: 335
         y: 543
         width: 261
         height: 288
@@ -254,8 +254,8 @@ TextureImporter:
       name: GeometryEnemy_3
       rect:
         serializedVersion: 2
-        x: 632
-        y: 544
+        x: 634
+        y: 545
         width: 264
         height: 261
       alignment: 0
@@ -276,10 +276,10 @@ TextureImporter:
       name: GeometryEnemy_5
       rect:
         serializedVersion: 2
-        x: 1180
-        y: 511
-        width: 329
-        height: 479
+        x: 1230
+        y: 545
+        width: 257
+        height: 262
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -321,9 +321,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 940
-        y: 474
+        y: 568
         width: 233
-        height: 318
+        height: 224
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,35 +339,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GeometryEnemy_16
-      rect:
-        serializedVersion: 2
-        x: 1044
-        y: 471
-        width: 27
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7d7ef732e106f71c0800000000000000
-      internalID: -4503775419786336297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: GeometryEnemy_17
       rect:
         serializedVersion: 2
-        x: 1210
-        y: 189
-        width: 291
-        height: 303
+        x: 1216
+        y: 183
+        width: 290
+        height: 295
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -386,10 +364,10 @@ TextureImporter:
       name: GeometryEnemy_18
       rect:
         serializedVersion: 2
-        x: 43
-        y: 79
-        width: 296
-        height: 391
+        x: 36
+        y: 188
+        width: 271
+        height: 286
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -430,10 +408,10 @@ TextureImporter:
       name: GeometryEnemy_22
       rect:
         serializedVersion: 2
-        x: 592
-        y: 87
-        width: 303
-        height: 393
+        x: 644
+        y: 196
+        width: 243
+        height: 284
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,10 +430,10 @@ TextureImporter:
       name: GeometryEnemy_23
       rect:
         serializedVersion: 2
-        x: 898
-        y: 103
-        width: 311
-        height: 372
+        x: 928
+        y: 196
+        width: 261
+        height: 279
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

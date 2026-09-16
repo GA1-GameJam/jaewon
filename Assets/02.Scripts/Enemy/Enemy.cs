@@ -56,9 +56,35 @@ public class Enemy : MonoBehaviour, IPoolable
             _enemyColor = GetComponent<EnemyColor>();
         }
 
-        _maxHP = _basicHealth * _enemyStat.Health;
+        SpawnEvent();
+        ApplyHealthMultiplier(1f);
+    }
+
+    private void SpawnEvent()
+    {
+        ObjectSquash objectSquash=GetComponent<ObjectSquash>();
+        if (objectSquash != null)
+        {
+            objectSquash.StartSquash(0.5f);
+        }
+
+        ObjectRotator objectRotator = GetComponent<ObjectRotator>();
+        if (objectRotator != null)
+        {
+            objectRotator.StartRotate(0.5f);
+        }
+    }
+    public void ApplyHealthMultiplier(float multiplier)
+    {
+        if (_enemyStat == null)
+        {
+            return;
+        }
+
+        multiplier = Mathf.Max(0f, multiplier);
+        _maxHP = _basicHealth * _enemyStat.Health * multiplier;
         _currentHP = _maxHP;
-        Debug.Log(_currentHP);
+
         if (_enemyColor != null)
         {
             _enemyColor.DecisionColorByHp(_maxHP, _currentHP);
