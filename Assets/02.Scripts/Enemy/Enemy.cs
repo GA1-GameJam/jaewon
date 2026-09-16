@@ -9,7 +9,6 @@ public enum EnemyType
 public class Enemy : MonoBehaviour
 {
     private EnemyStat _enemyStat;
-
     public EnemyStat EnemyStat => _enemyStat;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,5 +21,14 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void TakeDamage(float input)
+    {
+        if (input > 0) return;
+        if (input < 0)
+        {
+            //사망
+        }
     }
 }

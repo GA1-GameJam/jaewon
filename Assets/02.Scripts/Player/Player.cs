@@ -9,4 +9,32 @@ public class Player : MonoBehaviour
     {
         
     }
+
+
+    public void MoveSpeedUp(float input)
+    {
+        if (input < 0) return;
+        _playerStat.MoveSpeed += input;
+    }
+    public void AttackSpeedUp(float input)
+    {
+        if (input < 0) return;
+        _playerStat.AttackSpeed+= input;
+    }
+    public void AttackDamageUp(float input)
+    {
+        if (input < 0) return;
+        _playerStat.AttackDamage+= input;
+    }
+    
+    public void BulletCountUp(int input)
+    {
+        if (input < 0) return;
+        _playerStat.BulletCount += input;
+    }
+
+    public void BulletTypeSwitch(BulletType bulletType)
+    {
+        
+    }
 }

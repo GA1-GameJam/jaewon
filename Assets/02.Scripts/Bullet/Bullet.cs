@@ -10,41 +10,19 @@ public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private BulletStat _bulletStat;
     public BulletStat BulletStat => _bulletStat;
-
-    [Header("총알 색상")]
-    [SerializeField] private Color _bulletColor = Color.white;
-    public Color BulletColor => _bulletColor;
-
-    private SpriteRenderer _spriteRenderer;
+   
+   private BulletColor _bulletColor; 
 
     private void Awake()
     {
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        ApplyColor();
+        _bulletColor=GetComponent<BulletColor>();
     }
 
-    public void SetColor(Color color)
-    {
-        _bulletColor = color;
-        ApplyColor();
-    }
 
-    private void ApplyColor()
-    {
-        if (_spriteRenderer == null)
-        {
-            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        }
-
-        if (_spriteRenderer != null)
-        {
-            _spriteRenderer.color = _bulletColor;
-        }
-    }
 
     public void Spawn()
     {
-        ApplyColor();
+        _bulletColor.DecisionColorToAttackDamage();
     }
 
     public void Despawn()
@@ -57,7 +35,7 @@ public class Bullet : MonoBehaviour, IPoolable
                 EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
                 if (effect != null)
                 {
-                    effect.SetColor(_bulletColor);
+                    effect.SetColor(_bulletColor.GetBulletColor);
                 }
             }
         }
@@ -68,7 +46,7 @@ public class Bullet : MonoBehaviour, IPoolable
         if (other.CompareTag("Enemy"))
         {
             // 적에게 데미지 전달
-            // other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage);
+            other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage*GameManager.Instance.Player.PlayerStat.AttackDamage);
         }
 
         if (other.CompareTag("Wall") || other.CompareTag("Enemy"))
