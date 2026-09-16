@@ -10,7 +10,7 @@ public class PlayerFire : MonoBehaviour
     private Player _player;
     private float _curTime;
     
-    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private GameObject _curEquipedBulletPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     
@@ -44,7 +44,7 @@ public class PlayerFire : MonoBehaviour
                 transform.right * offset;
 
             PoolManager.Instance.BulletPoolFactory.Get(
-                _bulletPrefab,
+                _curEquipedBulletPrefab,
                 bulletPos,
                 transform.rotation
             );

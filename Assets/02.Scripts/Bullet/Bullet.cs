@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum BulletType
@@ -6,28 +7,32 @@ public enum BulletType
 }
 public class Bullet : MonoBehaviour, IPoolable
 {
-    [SerializeField] private float _speed = 3f;
-    [SerializeField] private float _lifeTime = 5f;
-    private float _remainingLifeTime;
-
-    private void Update()
-    {
-        transform.Translate(Vector3.up * (_speed * Time.deltaTime));
-        _remainingLifeTime -= Time.deltaTime;
-
-        if (_remainingLifeTime <= 0f)
-        {
-            PoolManager.Instance.BulletPoolFactory.Release(this);
-        }
-    }
+    [SerializeField]private BulletStat _bulletStat;
+    public BulletStat BulletStat=>_bulletStat;
+    
 
     public void Spawn()
     {
-        _remainingLifeTime = _lifeTime;
     }
 
     public void Despawn()
     {
-        _remainingLifeTime = 0f;
+        PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletDestroyVfx,transform.position,transform.rotation);
     }
+
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            // 적에게 데미지 전달
+            // other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage);
+        }
+
+        if (other.CompareTag("Wall") || other.CompareTag("Enemy"))
+        {
+            PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+        }
+    }
+    
 }
