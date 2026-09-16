@@ -16,15 +16,18 @@ public class PlayerMove : MonoBehaviour
 
     private void PlayerMovementCheck()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        float h = 0f;
+        float v = 0f;
+
+        if (Input.GetKey(KeyCode.A)) h -= 1f;
+        if (Input.GetKey(KeyCode.D)) h += 1f;
+        if (Input.GetKey(KeyCode.S)) v -= 1f;
+        if (Input.GetKey(KeyCode.W)) v += 1f;
 
         Vector2 inputDirection = new Vector2(h, v).normalized;
 
-        // 입력이 있을 때
         if (inputDirection != Vector2.zero)
         {
-            // 현재 속도를 목표 방향/속도로 서서히 변경
             _currentVelocity = Vector2.MoveTowards(
                 _currentVelocity,
                 inputDirection * GameManager.Instance.Player.PlayerStat.MoveSpeed*_basicMoveSpeed,
@@ -42,7 +45,6 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            // 입력이 없으면 서서히 감속
             _currentVelocity = Vector2.MoveTowards(
                 _currentVelocity,
                 Vector2.zero,

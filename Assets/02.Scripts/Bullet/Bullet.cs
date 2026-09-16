@@ -12,9 +12,12 @@ public class Bullet : MonoBehaviour, IPoolable
     public BulletStat BulletStat => _bulletStat;
    
    private BulletColor _bulletColor; 
+   private BulletMove _bulletMove;
+   private int _remainHitCount;
 
     private void Awake()
     {
+        _bulletMove = GetComponent<BulletMove>();
         _bulletColor=GetComponent<BulletColor>();
     }
 
@@ -22,6 +25,7 @@ public class Bullet : MonoBehaviour, IPoolable
 
     public void Spawn()
     {
+        _remainHitCount = _bulletStat.HitEnableCount;
         _bulletColor.DecisionColorToAttackDamage();
     }
 
@@ -45,14 +49,24 @@ public class Bullet : MonoBehaviour, IPoolable
     {
         if (other.CompareTag("Enemy"))
         {
-            // 적에게 데미지 전달
             other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage*GameManager.Instance.Player.PlayerStat.AttackDamage);
-            
-        }
 
-        if (other.CompareTag("Wall") || other.CompareTag("Enemy"))
+            if (--_remainHitCount <= 0)
+            {
+                PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+            }
+        }
+        else if (other.CompareTag("Wall"))
         {
-            PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+            IBounceable bounceable = GetComponent<IBounceable>();
+            if (bounceable != null)
+            {
+                bounceable.Bounce(other);
+            }
+            else
+            {
+                PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+            }
         }
     }
 }
