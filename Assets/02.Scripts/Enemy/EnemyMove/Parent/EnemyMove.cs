@@ -2,7 +2,8 @@ using UnityEngine;
 
 public abstract class EnemyMove : MonoBehaviour
 {
-    private Enemy _enemy;
+    protected Enemy _enemy;
+    [Header("기본 이동속도")][SerializeField]protected float _basicMoveSpeed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

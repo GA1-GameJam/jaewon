@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour, IPoolable
         {
             // 적에게 데미지 전달
             other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage*GameManager.Instance.Player.PlayerStat.AttackDamage);
+            
         }
 
         if (other.CompareTag("Wall") || other.CompareTag("Enemy"))
