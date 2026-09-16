@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerFire : MonoBehaviour
 {
 
+    [Header("총알 기본 쿨타임")]
+    [SerializeField] private float _basicBulletCoolTime=1f;
     [Header("총알 발사 지점")]
     [SerializeField] private Transform _bulletPoint;
     [Header("총알 간격")]
@@ -32,7 +34,7 @@ public class PlayerFire : MonoBehaviour
 
     private void FireBullet()
     {
-        _curTime = _player.PlayerStat.AttackSpeed;
+        _curTime = _basicBulletCoolTime*_player.PlayerStat.AttackSpeed;
         
 
         for (int i = 0; i < _player.PlayerStat.BulletCount; i++)

@@ -2,17 +2,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    private Player _player;
-    
+    [Header("플레이어 기본 움직임 값")][SerializeField] private float _basicMoveSpeed=6f;
     [SerializeField] private float _acceleration = 20f;
     [SerializeField] private float _deceleration = 10f;
 
     private Vector2 _currentVelocity;
-
-    private void Start()
-    {
-        _player = GetComponent<Player>();
-    }
     
 
     void Update()
@@ -33,7 +27,7 @@ public class PlayerMove : MonoBehaviour
             // 현재 속도를 목표 방향/속도로 서서히 변경
             _currentVelocity = Vector2.MoveTowards(
                 _currentVelocity,
-                inputDirection * _player.PlayerStat.MoveSpeed,
+                inputDirection * GameManager.Instance.Player.PlayerStat.MoveSpeed*_basicMoveSpeed,
                 _acceleration * Time.deltaTime
             );
 

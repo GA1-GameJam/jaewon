@@ -5,8 +5,9 @@ public class PlayerStat
 {
     public float MaxScore;
     public float CurrentScore;
+    public int BulletCount;
+    //각 기준은 배율을 가리킵니다
     public float AttackDamage;
     public float AttackSpeed;
-    public int BulletCount;
     public float MoveSpeed;
 }
