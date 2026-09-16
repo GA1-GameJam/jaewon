@@ -25,12 +25,13 @@
 
   commit_msg_file="$1"
 
-  # 제목 형식: [문서]깃 Hook기능 추가
-    if ! grep -qE '^\[(개발|수정|추가|삭제|리팩터링|문서|테스트|설정)\][[:space:]]*.+$' "$commit_msg_file"; then
-        echo "커밋 제목 형식이 올바르지 않습니다."
-        echo "예시: [문서]깃 Hook기능 추가"
-        exit 1
-    fi
+# 커밋 제목 형식 검사
+  if ! grep -qE '^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?!?: .+' "$commit_msg_file"; then
+      echo "커밋 메시지는 다음 형식이어야 합니다:"
+      echo "feat: 메시지"
+      echo "fix(ui): 메시지"
+      exit 1
+  fi
 
   # 본문 최소 2줄 검사
   body_lines=$(awk '
