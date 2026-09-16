@@ -5,22 +5,64 @@ public enum BulletType
 {
     normal,
 }
+
 public class Bullet : MonoBehaviour, IPoolable
 {
-    [SerializeField]private BulletStat _bulletStat;
-    public BulletStat BulletStat=>_bulletStat;
-    
+    [SerializeField] private BulletStat _bulletStat;
+    public BulletStat BulletStat => _bulletStat;
+
+    [Header("총알 색상")]
+    [SerializeField] private Color _bulletColor = Color.white;
+    public Color BulletColor => _bulletColor;
+
+    private SpriteRenderer _spriteRenderer;
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        ApplyColor();
+    }
+
+    public void SetColor(Color color)
+    {
+        _bulletColor = color;
+        ApplyColor();
+    }
+
+    private void ApplyColor()
+    {
+        if (_spriteRenderer == null)
+        {
+            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
+
+        if (_spriteRenderer != null)
+        {
+            _spriteRenderer.color = _bulletColor;
+        }
+    }
 
     public void Spawn()
     {
+        ApplyColor();
     }
 
     public void Despawn()
     {
-        PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletDestroyVfx,transform.position,transform.rotation);
+        if (_bulletStat != null && _bulletStat.BulletDestroyVfx != null)
+        {
+            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletDestroyVfx, transform.position, transform.rotation);
+            if (vfx != null)
+            {
+                EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
+                if (effect != null)
+                {
+                    effect.SetColor(_bulletColor);
+                }
+            }
+        }
     }
 
-    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
@@ -34,5 +76,4 @@ public class Bullet : MonoBehaviour, IPoolable
             PoolManager.Instance.BulletPoolFactory.Release(gameObject);
         }
     }
-    
 }

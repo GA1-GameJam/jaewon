@@ -4,7 +4,7 @@ using UnityEngine;
 public class EffectAutoDespawn : MonoBehaviour, IPoolable
 {
     [Header("생존 시간 (초)")]
-    [SerializeField] private float _lifeTime = 2.5f;
+    [SerializeField] private float _lifeTime = 0.5f;
 
     [Header("파티클 시스템 기반 자동 시간 계산")]
     [SerializeField] private bool _autoCalculateDuration = true;
@@ -14,7 +14,20 @@ public class EffectAutoDespawn : MonoBehaviour, IPoolable
 
     private void Awake()
     {
-        _particleSystems = GetComponentsInChildren<ParticleSystem>(true);
+        CacheParticleSystems();
+        CalculateDuration();
+    }
+
+    private void CacheParticleSystems()
+    {
+        if (_particleSystems == null || _particleSystems.Length == 0)
+        {
+            _particleSystems = GetComponentsInChildren<ParticleSystem>(true);
+        }
+    }
+
+    private void CalculateDuration()
+    {
         if (_autoCalculateDuration && _particleSystems != null && _particleSystems.Length > 0)
         {
             float maxDuration = 0f;
@@ -31,6 +44,27 @@ public class EffectAutoDespawn : MonoBehaviour, IPoolable
             {
                 _lifeTime = maxDuration;
             }
+        }
+    }
+
+    /// <summary>
+    /// 폭발 파티클의 메인 색상을 동적으로 설정합니다.
+    /// </summary>
+    public void SetColor(Color color)
+    {
+        CacheParticleSystems();
+        if (_particleSystems == null) return;
+
+        foreach (var ps in _particleSystems)
+        {
+            // 연기(Smoke) 제외, 폭발 파티클만 색상 적용
+            if (ps.gameObject.name.ToLower().Contains("smoke"))
+            {
+                continue;
+            }
+
+            var main = ps.main;
+            main.startColor = color;
         }
     }
 
@@ -54,10 +88,7 @@ public class EffectAutoDespawn : MonoBehaviour, IPoolable
 
     public void Spawn()
     {
-        if (_particleSystems == null || _particleSystems.Length == 0)
-        {
-            _particleSystems = GetComponentsInChildren<ParticleSystem>(true);
-        }
+        CacheParticleSystems();
 
         foreach (var ps in _particleSystems)
         {
