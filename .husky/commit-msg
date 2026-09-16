@@ -25,15 +25,15 @@
 
   commit_msg_file="$1"
 
-# 커밋 제목 형식 검사
+  # 커밋 제목 형식 검사: feat: add Git Hook
   if ! grep -qE '^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?!?: .+' "$commit_msg_file"; then
       echo "커밋 메시지는 다음 형식이어야 합니다:"
-      echo "feat: 메시지"
-      echo "fix(ui): 메시지"
+      echo "feat: add Git Hook"
+      echo "fix(ui): resolve player movement issue"
       exit 1
   fi
 
-  # 본문 최소 2줄 검사
+  # 본문 최소 1줄 검사
   body_lines=$(awk '
       NR > 1 && $0 !~ /^[[:space:]]*$/ && $0 !~ /^#/ {
           count++
