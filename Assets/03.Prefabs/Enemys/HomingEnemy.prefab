@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2461100771358113337}
   - component: {fileID: 6362849614186386625}
-  - component: {fileID: 4503307373052083620}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -92,19 +91,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4503307373052083620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4927668931447679849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67adba87d17dc594c814c8156c2d9a1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectRotator
-  _rotateSpeed: 50
 --- !u!1 &8279852660396946054
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7396ecbb647f9704897501249aea2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomingEnemyMove
-  _basicMoveSpeed: 3
+  _basicMoveSpeed: 1
 --- !u!114 &-6791884169574921217
 MonoBehaviour:
   m_ObjectHideFlags: 0

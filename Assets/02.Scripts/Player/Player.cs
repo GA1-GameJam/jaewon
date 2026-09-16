@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -5,10 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField]private PlayerStat _playerStat;
     public PlayerStat PlayerStat => _playerStat;
     
-    public void Init()
-    {
-        
-    }
+    
 
 
     public void MoveSpeedUp(float input)
@@ -37,4 +35,5 @@ public class Player : MonoBehaviour
     {
         
     }
+    
 }

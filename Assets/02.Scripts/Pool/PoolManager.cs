@@ -12,6 +12,10 @@ public class PoolManager : MonoBehaviour
     [SerializeField] private PoolFactory _enemyPoolFactory;
     public PoolFactory EnemyPoolFactory => _enemyPoolFactory;
 
+    [Header("경험치 오브젝트 풀")]
+    [SerializeField] private PoolFactory _expPoolFactory;
+    public PoolFactory ExpPoolFactory => _expPoolFactory;
+
     [Header("이펙트 팩토리")]
     [SerializeField] private PoolFactory _vfxPoolFactory;
     public PoolFactory VfxPoolFactory => _vfxPoolFactory;
@@ -32,6 +36,7 @@ public class PoolManager : MonoBehaviour
     {
         _bulletPoolFactory?.ClearUnusedPools();
         _enemyPoolFactory?.ClearUnusedPools();
+        _expPoolFactory?.ClearUnusedPools();
         _vfxPoolFactory?.ClearUnusedPools();
     }
 }

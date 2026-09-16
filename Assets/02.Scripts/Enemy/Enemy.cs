@@ -1,10 +1,5 @@
 using UnityEngine;
 
-public enum EnemyType
-{
-    Forward,
-}
-
 public class Enemy : MonoBehaviour, IPoolable
 {
     [Header("기본 체력")]
@@ -33,6 +28,7 @@ public class Enemy : MonoBehaviour, IPoolable
         {
             if (PoolManager.Instance != null && PoolManager.Instance.EnemyPoolFactory != null)
             {
+                EnhanceManager.Instance.CreateExp(transform.position);
                 PoolManager.Instance.EnemyPoolFactory.Release(this.gameObject); // 사망
             }
             else
@@ -93,6 +89,5 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public void Despawn()
     {
-        // 풀에 반환될 때 필요한 초기화 작업 수행
     }
 }
