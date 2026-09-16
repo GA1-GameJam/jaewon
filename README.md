@@ -1,3 +1,5 @@
+<img width="1204" height="625" alt="image" src="https://github.com/user-attachments/assets/8844ec40-79e6-450b-aba6-8ec58bd067d5" />
+
 Geometry Wars Style
 🎮 게임 개요
 장르: 2D Top-Down 슈팅
