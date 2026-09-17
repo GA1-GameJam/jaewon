@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour, IPoolable
 {
     [SerializeField] private BulletStat _bulletStat;
+    [SerializeField] private bool _isWallPenetrateEnable = false;
     public BulletStat BulletStat => _bulletStat;
    
    private BulletColor _bulletColor; 
@@ -64,7 +65,11 @@ public class Bullet : MonoBehaviour, IPoolable
             }
             else
             {
-                PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+                if (!_isWallPenetrateEnable)
+                {
+                    PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+
+                }
             }
         }
     }

@@ -315,4 +315,4 @@ MonoBehaviour:
   _enemy: {fileID: 6322695242019962337, guid: 8c295b6ccfa96254eaa3194129510b59, type: 3}
   _count: 1
   _isAutoSpawn: 1
-  _autoSpawnTime: 1
+  _autoSpawnTime: 3

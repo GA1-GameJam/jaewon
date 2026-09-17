@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using SimpleInputNamespace;
 using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
@@ -13,6 +14,8 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private float _bulletSpacing=0.5f;
     [Header("총알 발사 사운드")]
     [SerializeField] private AudioClip _bulletFireSound;
+    [Header("조준 조이스틱")]
+    [SerializeField] private Joystick _fireHeadJoystick;
     private Player _player;
     private float _curTime;
 
@@ -56,7 +59,9 @@ public class PlayerFire : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow)) v -= 1f;
         if (Input.GetKey(KeyCode.UpArrow)) v += 1f;
 
-        Vector2 inputDirection = new Vector2(h, v).normalized;
+        Vector2 keyboardInput = new Vector2(h, v);
+        Vector2 joystickInput = _fireHeadJoystick != null ? _fireHeadJoystick.Value : Vector2.zero;
+        Vector2 inputDirection = Vector2.ClampMagnitude(keyboardInput + joystickInput, 1f);
 
         // 입력이 없으면 마지막 조준 방향을 유지한다.
         if (inputDirection == Vector2.zero || _fireHead == null)

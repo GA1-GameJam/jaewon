@@ -1,12 +1,25 @@
 using UnityEngine;
+using SimpleInputNamespace;
 
 public class PlayerMove : MonoBehaviour
 {
     [Header("플레이어 기본 움직임 값")][SerializeField] private float _basicMoveSpeed=6f;
     [SerializeField] private float _acceleration = 20f;
     [SerializeField] private float _deceleration = 10f;
+    [Header("이동 조이스틱")]
+    [SerializeField] private Joystick _moveJoystick;
 
     private Vector2 _currentVelocity;
+
+    private void Start()
+    {
+        if (_moveJoystick == null)
+        {
+            GameObject joystickObject = GameObject.Find("moveJoystick");
+            if (joystickObject != null)
+                _moveJoystick = joystickObject.GetComponent<Joystick>();
+        }
+    }
     
 
     void Update()
@@ -24,7 +37,9 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) v -= 1f;
         if (Input.GetKey(KeyCode.W)) v += 1f;
 
-        Vector2 inputDirection = new Vector2(h, v).normalized;
+        Vector2 keyboardInput = new Vector2(h, v);
+        Vector2 joystickInput = _moveJoystick != null ? _moveJoystick.Value : Vector2.zero;
+        Vector2 inputDirection = Vector2.ClampMagnitude(keyboardInput + joystickInput, 1f);
 
         if (inputDirection != Vector2.zero)
         {

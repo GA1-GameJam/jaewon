@@ -47,11 +47,13 @@ Shader "Custom/GridBackgroundDistortion"
             {
                 float2 uv = input.uv;
                 float2 texel = _GridTrailTexelSize.xy;
-                float trail = SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, uv).r;
-                float trailX = SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, uv + float2(texel.x,0)).r - SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, uv - float2(texel.x,0)).r;
-                float trailY = SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, uv + float2(0,texel.y)).r - SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, uv - float2(0,texel.y)).r;
+                // Sprite UV는 아틀라스/패킹에 따라 달라질 수 있으므로 흔적은 화면 좌표로 샘플링합니다.
+                float2 trailUV = saturate(input.positionCS.xy / _ScreenParams.xy);
+                float trail = SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, trailUV).r;
+                float trailX = SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, trailUV + float2(texel.x,0)).r - SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, trailUV - float2(texel.x,0)).r;
+                float trailY = SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, trailUV + float2(0,texel.y)).r - SAMPLE_TEXTURE2D(_GridDistortionTex, sampler_GridDistortionTex, trailUV - float2(0,texel.y)).r;
                 float2 distortion = float2(trailX, trailY);
-                uv += distortion * _DistortionStrength * (1.0 + trail * 2.0);
+                uv += distortion * _DistortionStrength * (2.0 + trail * 4.0);
                 float2 gridUV = uv * _Tiling.xy + _Time.y * _GridSpeed.xy;
                 float angle = radians(_GridRotation);
                 float2 rotation = float2(cos(angle), sin(angle));
@@ -59,6 +61,7 @@ Shader "Custom/GridBackgroundDistortion"
                 half grid = SAMPLE_TEXTURE2D(_GridTexture, sampler_GridTexture, gridUV).r;
                 half3 color = lerp(_GroundColor.rgb, _GridColor.rgb, grid);
                 half alpha = saturate(lerp(_GroundColor.a, _GridColor.a, grid) + trail * _TrailInfluence);
+                color += _GridColor.rgb * trail * _TrailInfluence;
                 return half4(color, alpha) * input.color;
             }
             ENDHLSL
