@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5928162435105382926}
   - component: {fileID: 7353302045749014012}
   - component: {fileID: 7648698755726561439}
-  - component: {fileID: 8393921150282212969}
+  - component: {fileID: 6742533384839969381}
   m_Layer: 5
   m_Name: ExpEnhanceButton
   m_TagString: Untagged
@@ -43,7 +43,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140, y: 250}
+  m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6570609456768151694
 CanvasRenderer:
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a925239414de9324eb0182c0a724d80e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57964f51218f1d040b62a85bc00fef58, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhanceLevelIndicator
   _baseColor: {r: 0, g: 0.9477272, b: 1, a: 1}
   _maxLevelColor: {r: 1, g: 0, b: 0.84357405, a: 1}
---- !u!114 &8393921150282212969
+--- !u!114 &6742533384839969381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,13 +175,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 958839405148135823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ffb3e5b472fe940a245c3662ee8782, type: 3}
+  m_Script: {fileID: 11500000, guid: 752db9f629317d44b84e2f2adb939f91, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackSpeedEnhanceButton
-  _awakeingButtons: {fileID: 0}
-  _enhancedLimitedCount: 5
+  m_EditorClassIdentifier: Assembly-CSharp::ExpMultipierEnhanceButton
+  _enhancedLimitedCount: 30
   _enhancedCount: 1
-  _plusMultipier: 0.5
+  _bindingSkill: {fileID: 0}
+  _plusMultipier: 0.1
 --- !u!1 &1452527047164325682
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,8 +216,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 54.9}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 200, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6630826373769269305
 CanvasRenderer:

@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
 
     [Header("플레이어 참조")][SerializeField]private Player _player;
     public Player Player => _player;
-    
+    [Header("클릭시 소환 vfx")][SerializeField]private GameObject _clickVfx;
+    public GameObject ClickVfx => _clickVfx;
     private void Awake()
     {
         if (_instance == null)

@@ -69,8 +69,8 @@ public class RotateBlade : SkillParent
                 continue;
             }
 
-            Blade bladeComponent = blade.GetComponent<Blade>();
-            bladeComponent?.SetBladeColor(_level);
+            SkillColor bladeComponent = blade.GetComponent<SkillColor>();
+            bladeComponent?.SetColor(_level);
         }
     }
 

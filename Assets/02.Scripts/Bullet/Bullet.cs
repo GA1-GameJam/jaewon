@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour, IPoolable
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage*GameManager.Instance.Player.PlayerStat.AttackDamage);
-
+            MakeHitEffect();
             if (--_remainHitCount <= 0)
             {
                 PoolManager.Instance.BulletPoolFactory.Release(gameObject);
@@ -62,6 +62,22 @@ public class Bullet : MonoBehaviour, IPoolable
             else
             {
                 PoolManager.Instance.BulletPoolFactory.Release(gameObject);
+            }
+        }
+    }
+
+    private void MakeHitEffect()
+    {
+        if (_bulletStat != null && _bulletStat.BulletHitVfx != null)
+        {
+            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletHitVfx, transform.position, transform.rotation);
+            if (vfx != null)
+            {
+                EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
+                if (effect != null)
+                {
+                    effect.SetColor(_bulletColor.GetBulletColor);
+                }
             }
         }
     }

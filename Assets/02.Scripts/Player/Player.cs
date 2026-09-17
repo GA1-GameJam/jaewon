@@ -36,8 +36,13 @@ public class Player : MonoBehaviour
         if (input < 0) return;
         _playerStat.BulletCount += input;
     }
-    
-    
-    
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0f;
+        }
+    }
 }

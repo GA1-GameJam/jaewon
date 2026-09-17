@@ -50,6 +50,8 @@ public class EnhancePanelManager : MonoBehaviour
 
     public void OnEnhancePanel()
     {
+        _enhancePanel.SetActive(true);
+
         Time.timeScale = 0f;
 
         Cursor.visible = true;
@@ -62,6 +64,8 @@ public class EnhancePanelManager : MonoBehaviour
     public void OffEnhancePanel()
     {
         DeleteEnhanceButtons();
+
+        _enhancePanel.SetActive(false);
 
         Time.timeScale = 1f;
 
