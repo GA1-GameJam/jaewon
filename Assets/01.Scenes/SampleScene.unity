@@ -488,6 +488,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -627,6 +628,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFollow
   _player: {fileID: 590216655}
   _interpolationTime: 0.5
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8471f3069cd5ab3499dcf5f28ef33727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &538723339
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +839,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -956,7 +969,7 @@ MonoBehaviour:
   _basicBulletCoolTime: 0.5
   _bulletPoint: {fileID: 61263716}
   _bulletSpacing: 0.5
-  _bulletFireSound: {fileID: 8300000, guid: 0ae75befa3473a2499f6de2b1463ef4a, type: 3}
+  _bulletFireSound: {fileID: 8300000, guid: d34d41a08c1634e499a3fddec89829e3, type: 3}
   _levelForUpgrade: 5
   _bulletPrefLists:
   - {fileID: 4606264528693911947, guid: 88d7bc1c26b02f145abdeedfced6bbc9, type: 3}
@@ -2227,11 +2240,15 @@ MonoBehaviour:
   _enemyPrefabs:
   - {fileID: 8279852660396946054, guid: 5081dae097add814f88e891651d86b51, type: 3}
   - {fileID: 8279852660396946054, guid: 153f83e8ccc1523498b3d6b0551ca837, type: 3}
+  - {fileID: 8279852660396946054, guid: 7f7871687e2270344a76b3dec1660d70, type: 3}
   - {fileID: 8279852660396946054, guid: 3414da1afe55319499d7a9576c56f2c9, type: 3}
   - {fileID: 8279852660396946054, guid: 751c42a641add0449aca7e7aa435ba17, type: 3}
   - {fileID: 8279852660396946054, guid: 4853a67bea5aa5546a5b3e0ed31126fa, type: 3}
   - {fileID: 8279852660396946054, guid: 5c62388c2bede4f46acc29acb95cba77, type: 3}
-  _enhanceTime: 15
+  _enhanceTime: 20
+  _enhanceSpawnTimeDecreaseAmount: 0.1
+  _enhanceSpawnCountPlusAmount: 1
+  _typePlusCount: 30
   _healthEnhanceRate: 0.5
 --- !u!4 &1233765517 stripped
 Transform:
@@ -2332,6 +2349,8 @@ MonoBehaviour:
   _expPrefab: {fileID: 1839063812856499433, guid: e6960f2f16a05f54bb097210820650d0, type: 3}
   _expAmountForEnhance: 100
   _expAmountMultipier: 1.2
+  _openClip: {fileID: 8300000, guid: d34d41a08c1634e499a3fddec89829e3, type: 3}
+  _closeClip: {fileID: 8300000, guid: 66e284406eae58f4f96c74153e7bf98f, type: 3}
 --- !u!114 &1386761485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2893,7 +2912,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1567583350}
   - component: {fileID: 1567583349}
-  - component: {fileID: 1567583351}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2932,18 +2950,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1567583351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1567583348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8471f3069cd5ab3499dcf5f28ef33727, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &1602636341
 GameObject:
   m_ObjectHideFlags: 0

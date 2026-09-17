@@ -22,6 +22,11 @@ public class EnhanceManager : MonoBehaviour
     [Header("레벨업마다 다음 레벨업 총량 늘어나는 비율")] [SerializeField]
     private float _expAmountMultipier;
     private float _curExp;
+    [Header("여는 소리")][SerializeField]
+    private AudioClip _openClip;
+    [Header("닫는 소리")][SerializeField]
+    private AudioClip _closeClip;
+    
     
     void Awake()
     {
@@ -61,13 +66,15 @@ public class EnhanceManager : MonoBehaviour
     {
         _curExp-= _expAmountForEnhance;
         _expAmountForEnhance *= _expAmountMultipier;
-        
+     
+        AudioManager.Instance.PlayEffectClip(_openClip);
         _enhancePanelManager.OnEnhancePanel();
     }
 
     public void EndEnhance()
     {
         //실행 내역에 따른 능력 적용 
+        AudioManager.Instance.PlayEffectClip(_closeClip);
 
         _enhancePanelManager.OffEnhancePanel();
         GameManager.Instance.CameraShake.Shake(0.2f,0.2f);

@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   _bulletStat:
     BulletSpeed: 15
-    BulletDamage: 50
+    BulletDamage: 100
     HitEnableCount: 0
     BulletHitVfx: {fileID: 4454377697536815295, guid: 8b5c9350f2b204140915913895328f4f, type: 3}
     BulletDestroyVfx: {fileID: 4454377697536815295, guid: 5634c66826a50184abb461e59b31758a, type: 3}
@@ -356,9 +356,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7369109714287070078}
   - component: {fileID: 8252812720044454906}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ParticleShiled
-  m_TagString: Wall
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,7 +385,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5038169961067196885}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -408,7 +408,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

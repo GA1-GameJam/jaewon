@@ -67,4 +67,10 @@ public class EnemySpawner : MonoBehaviour
     {
         _enemyHealthMultiplier = Mathf.Max(0f, multiplier);
     }
+
+    public void EnhanceSpawnStat(float spawnInterval,int spawnCount)
+    {
+        _spawnInterval-= spawnInterval;
+        
+    }
 }
