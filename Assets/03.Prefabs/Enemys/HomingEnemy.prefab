@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7269607943076654419, guid: c5c0b601b1698f846b16bd76fb1e0866, type: 3}
+  m_Sprite: {fileID: 4257590668015214026, guid: c5c0b601b1698f846b16bd76fb1e0866, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -266,4 +266,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSquash
   _squashScale: {x: 1.2, y: 0.8, z: 1}
-  squashTime: 0.5
+  _squashTime: 0.5

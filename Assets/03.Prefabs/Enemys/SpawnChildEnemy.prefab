@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2461100771358113337}
   - component: {fileID: 6362849614186386625}
-  - component: {fileID: 4503307373052083620}
+  - component: {fileID: 5988168619505749090}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1405257496926411546, guid: c5c0b601b1698f846b16bd76fb1e0866, type: 3}
+  m_Sprite: {fileID: -7269607943076654419, guid: c5c0b601b1698f846b16bd76fb1e0866, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4503307373052083620
+--- !u!114 &5988168619505749090
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67adba87d17dc594c814c8156c2d9a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectRotator
-  _rotateSpeed: 20
+  _rotateSpeed: 10
   _acceleration: 100
 --- !u!1 &8279852660396946054
 GameObject:
@@ -117,13 +117,14 @@ GameObject:
   - component: {fileID: 6067597898332585536}
   - component: {fileID: 6322695242019962337}
   - component: {fileID: 6136380402276849671}
-  - component: {fileID: 3665519248219300680}
   - component: {fileID: -5196508534946273982}
   - component: {fileID: -2850595006328202404}
-  - component: {fileID: 6054801320346223847}
-  - component: {fileID: -9182562825641541533}
+  - component: {fileID: 7621856243516314820}
+  - component: {fileID: -6791884169574921217}
+  - component: {fileID: 915494110718481829}
+  - component: {fileID: 78684815772816764}
   m_Layer: 8
-  m_Name: ScaleUpEnemy
+  m_Name: SpawnChildEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,19 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyColor
   _fullHpColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
   _lowHpColor: {r: 2.5, g: 0.25, b: 0.25, a: 1}
---- !u!114 &3665519248219300680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8279852660396946054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d78778f0d3da99349978c5457c7447b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ForwardEnemyMove
-  _basicMoveSpeed: 5
 --- !u!50 &-5196508534946273982
 Rigidbody2D:
   serializedVersion: 5
@@ -269,7 +257,20 @@ PolygonCollider2D:
       - {x: 0.58778536, y: -0.80901694}
       - {x: 0.9510565, y: 0.30901712}
   m_UseDelaunayMesh: 1
---- !u!114 &6054801320346223847
+--- !u!114 &7621856243516314820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279852660396946054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7396ecbb647f9704897501249aea2579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HomingEnemyMove
+  _basicMoveSpeed: 3
+--- !u!114 &-6791884169574921217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,9 +282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b5df6f446c9e8b439bd27dccb88e2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSquash
-  _squashScale: {x: 2, y: 0.3, z: 1}
+  _squashScale: {x: 1.2, y: 0.8, z: 1}
   _squashTime: 0.5
---- !u!114 &-9182562825641541533
+--- !u!114 &915494110718481829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,8 +293,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 8279852660396946054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02bce64517bf2ac45b5848cdd84d1383, type: 3}
+  m_Script: {fileID: 11500000, guid: 6acb4cf458837d949b50cf469e41ad19, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ObjectScaler
-  _scaleUpRate: 1.2
-  _startScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectViber
+  _vibeDistance: 0.1
+  _vibeSpeed: 7
+--- !u!114 &78684815772816764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8279852660396946054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4633422660ad39b43b04f76210d05e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MakeEnemyChild
+  _enemy: {fileID: 6322695242019962337, guid: 8c295b6ccfa96254eaa3194129510b59, type: 3}
+  _count: 1
+  _isAutoSpawn: 1
+  _autoSpawnTime: 1
