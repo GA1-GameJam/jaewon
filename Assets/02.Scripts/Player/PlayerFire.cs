@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
@@ -12,7 +13,14 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private float _bulletSpacing=0.5f;
     private Player _player;
     private float _curTime;
-    
+
+    [Header("총알 업그레이드를 위한 레벨")]
+    [SerializeField] private int _levelForUpgrade;
+    [Header("총알 업그레이드 후보")]
+    [SerializeField] private List<GameObject> _bulletPrefLists;
+
+    private int _bulletIdx = 0;
+
     [SerializeField] private GameObject _curEquipedBulletPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
@@ -20,6 +28,7 @@ public class PlayerFire : MonoBehaviour
     void Start()
     {
         _player = GetComponent<Player>();
+        EquipBullet();
     }
 
     // Update is called once per frame
@@ -59,6 +68,8 @@ public class PlayerFire : MonoBehaviour
 
     private void FireBullet()
     {
+        CheckEnableUpgrade();
+        
         _curTime = _basicBulletCoolTime*_player.PlayerStat.AttackSpeed;
 
         Transform fireTransform = _fireHead != null ? _fireHead.transform : transform;
@@ -78,6 +89,26 @@ public class PlayerFire : MonoBehaviour
             );
         }
     }
-    
+
+
+    public void CheckEnableUpgrade()
+    {
+        if (_player.PlayerStat.BulletCount >= _levelForUpgrade)
+        {
+            _player.PlayerStat.BulletCount = 1;
+            UpgradeBullet();
+        }
+    }
+    public void UpgradeBullet()
+    {
+        _bulletIdx++;
+        EquipBullet();
+    }
+
+    private void EquipBullet()
+    {
+        _curEquipedBulletPrefab=_bulletPrefLists[_bulletIdx];
+
+    }
     
 }

@@ -1,10 +1,6 @@
 using System;
 using UnityEngine;
 
-public enum BulletType
-{
-    normal,
-}
 
 public class Bullet : MonoBehaviour, IPoolable
 {

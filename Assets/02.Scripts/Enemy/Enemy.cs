@@ -114,8 +114,24 @@ public class Enemy : MonoBehaviour, IPoolable
     public void Despawn()
     {
         DeSpawnEvent();
+        MakeDeathVfx();
     }
-    
+
+    private void MakeDeathVfx()
+    {
+        
+            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_enemyStat.enemyDieVfx, transform.position, transform.rotation);
+            if (vfx != null)
+            {
+                EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
+                if (effect != null)
+                {
+                    effect.SetColor(_enemyColor.GetEnemyColor);
+                }
+            }
+        
+        
+    }
     private void DeSpawnEvent()
     {
         MakeEnemyChild makeEnemyChild=GetComponent<MakeEnemyChild>();

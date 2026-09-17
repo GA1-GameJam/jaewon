@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5928162435105382926}
   - component: {fileID: 7353302045749014012}
   - component: {fileID: 7648698755726561439}
-  - component: {fileID: 7616247209266272765}
+  - component: {fileID: 8393921150282212969}
   m_Layer: 5
-  m_Name: AttackDamageEnhanceButton
+  m_Name: ExpEnhanceButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhanceLevelIndicator
   _baseColor: {r: 0, g: 0.9477272, b: 1, a: 1}
   _maxLevelColor: {r: 1, g: 0, b: 0.84357405, a: 1}
---- !u!114 &7616247209266272765
+--- !u!114 &8393921150282212969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,13 +175,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 958839405148135823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ca934c3606917e41ae368d210f4fc3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 41ffb3e5b472fe940a245c3662ee8782, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AttackDamageEnhanceButton
+  m_EditorClassIdentifier: Assembly-CSharp::AttackSpeedEnhanceButton
   _awakeingButtons: {fileID: 0}
   _enhancedLimitedCount: 5
   _enhancedCount: 1
-  _plusMultipier: 0.1
+  _plusMultipier: 0.5
 --- !u!1 &1452527047164325682
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6260765135904077668, guid: c72ea0916a0022b41ba4154f84180960, type: 3}
+  m_Sprite: {fileID: -610426463, guid: c72ea0916a0022b41ba4154f84180960, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -322,7 +322,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF5\uACA9\uB825\n 0.1% \n\uC99D\uAC00\n\n"
+  m_text: "\uACBD\uD5D8\uCE58 \uD68D\uB4DD\uB7C9\n0.1% \n\uC99D\uAC00\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
   m_sharedMaterial: {fileID: -5471322265876472391, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF5\uACA9\uB825\n"
+  m_text: "\uACBD\uD5D8\uCE58\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
   m_sharedMaterial: {fileID: -5471322265876472391, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}

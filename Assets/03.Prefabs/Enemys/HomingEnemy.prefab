@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2461100771358113337}
   - component: {fileID: 6362849614186386625}
+  - component: {fileID: 4904654686356953867}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -91,6 +92,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &4904654686356953867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927668931447679849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67adba87d17dc594c814c8156c2d9a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectRotator
+  _rotateSpeed: 20
+  _acceleration: 100
 --- !u!1 &8279852660396946054
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +162,7 @@ MonoBehaviour:
   _enemyStat:
     Health: 1
     MoveSpeed: 1
+    enemyDieVfx: {fileID: 4454377697536815295, guid: a48ccf87ac90ff64e9c1875ee3d5f555, type: 3}
 --- !u!114 &6136380402276849671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,8 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f173c71519838d94d9bade854b53f4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyColor
-  _fullHpColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
-  _lowHpColor: {r: 2.5, g: 0.25, b: 0.25, a: 1}
+  _fullHpColor: {r: 2.9036689, g: 3.3376963, b: 0, a: 1}
+  _lowHpColor: {r: 2.5, g: 0.1, b: 0.1, a: 1}
 --- !u!50 &-5196508534946273982
 Rigidbody2D:
   serializedVersion: 5

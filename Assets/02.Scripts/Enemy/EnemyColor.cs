@@ -1,17 +1,16 @@
-using System;
 using UnityEngine;
 
 public class EnemyColor : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
+    private MaterialPropertyBlock _propertyBlock;
     private Color _enemyColor = new(0.25f, 2.25f, 2.5f, 1f);
-
+    public Color GetEnemyColor => _enemyColor;
     [Header("체력별 색상 (최대 체력 -> 빈사)")]
     [ColorUsage(true, true)]
-    [SerializeField] private Color _fullHpColor = new(0.25f, 2.25f, 2.5f, 1f);
+    [SerializeField] private Color _fullHpColor = new(2.5f, 2.0f, 0.1f, 1f);
     [ColorUsage(true, true)]
-    [SerializeField] private Color _lowHpColor = new(2.5f, 0.25f, 0.25f, 1f);
-
+    [SerializeField] private Color _lowHpColor =  new(2.5f, 0.1f, 0.1f, 1f);
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -40,7 +39,14 @@ public class EnemyColor : MonoBehaviour
 
         if (_spriteRenderer != null)
         {
-            _spriteRenderer.color = _enemyColor;
+            _propertyBlock ??= new MaterialPropertyBlock();
+
+            _spriteRenderer.GetPropertyBlock(_propertyBlock);
+            _propertyBlock.SetColor("_Color", _enemyColor);
+            _propertyBlock.SetColor("_RendererColor", Color.white);
+            _spriteRenderer.SetPropertyBlock(_propertyBlock);
         }
     }
+
+   
 }

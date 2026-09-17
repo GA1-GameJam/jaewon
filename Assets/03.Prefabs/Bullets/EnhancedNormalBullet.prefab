@@ -102,9 +102,9 @@ GameObject:
   - component: {fileID: 4921489470423109079}
   - component: {fileID: 1475695886619837818}
   - component: {fileID: 1812437532479016836}
-  - component: {fileID: -6762810456235673274}
   - component: {fileID: 3642890194310010493}
   - component: {fileID: 116779497336351136}
+  - component: {fileID: 7847376093619393065}
   m_Layer: 0
   m_Name: EnhancedNormalBullet
   m_TagString: Bullet
@@ -141,10 +141,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   _bulletStat:
-    BulletType: 0
     BulletSpeed: 15
-    BulletDamage: 50
-    HitEnableCount: 999
+    BulletDamage: 200
+    HitEnableCount: 3
     BulletDestroyVfx: {fileID: 4454377697536815295, guid: 5634c66826a50184abb461e59b31758a, type: 3}
 --- !u!114 &1812437532479016836
 MonoBehaviour:
@@ -158,18 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562cf1fce7f8cbe42aac7b9a058d49de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NormalBullet
---- !u!114 &-6762810456235673274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4606264528693911947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbdea25cfce87f246babf3fffe2bfc0f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletColor
 --- !u!50 &3642890194310010493
 Rigidbody2D:
   serializedVersion: 5
@@ -233,3 +220,17 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
+--- !u!114 &7847376093619393065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606264528693911947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdea25cfce87f246babf3fffe2bfc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletColor
+  _startColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
+  _endColor: {r: 2.5, g: 0.5, b: 3, a: 1}

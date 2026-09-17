@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2280354267583965044}
   - component: {fileID: 5872784277871665}
   - component: {fileID: 3642890194310010493}
+  - component: {fileID: 9069355128423417312}
   m_Layer: 0
   m_Name: EnhancedBounceBullet
   m_TagString: Bullet
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.8, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -310,3 +311,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9069355128423417312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4606264528693911947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdea25cfce87f246babf3fffe2bfc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletColor
+  _startColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
+  _endColor: {r: 2.5, g: 0.5, b: 3, a: 1}

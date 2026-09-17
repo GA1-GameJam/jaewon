@@ -149,6 +149,7 @@ MonoBehaviour:
   _enemyStat:
     Health: 1
     MoveSpeed: 1
+    enemyDieVfx: {fileID: 4454377697536815295, guid: a48ccf87ac90ff64e9c1875ee3d5f555, type: 3}
 --- !u!114 &6136380402276849671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f173c71519838d94d9bade854b53f4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyColor
-  _fullHpColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
-  _lowHpColor: {r: 2.5, g: 0.25, b: 0.25, a: 1}
+  _fullHpColor: {r: 2.9036689, g: 3.3376963, b: 0, a: 1}
+  _lowHpColor: {r: 2.5, g: 0.1, b: 0.1, a: 1}
 --- !u!50 &-5196508534946273982
 Rigidbody2D:
   serializedVersion: 5
@@ -268,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSquash
   _squashScale: {x: 1.2, y: 0.8, z: 1}
-  squashTime: 0.5
+  _squashTime: 0.5
 --- !u!114 &4460531711408395009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MakeEnemyChild
   _enemy: {fileID: 6322695242019962337, guid: 48ae35c4abd0f854b902a9c0574ad81b, type: 3}
   _count: 6
+  _isAutoSpawn: 0
+  _autoSpawnTime: 1
 --- !u!114 &8808995225140748050
 MonoBehaviour:
   m_ObjectHideFlags: 0
