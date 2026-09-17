@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 3642890194310010493}
   - component: {fileID: 9069355128423417312}
   - component: {fileID: 6812992445444817867}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnhancedBounceBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -404,8 +404,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4606264528693911947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5bf4eedd198e424d8a04c9267078782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridControl
+  targetCamera: {fileID: 0}
+  textureSize: 512
+  stampSize: 0.045
+  trailStrength: 1
+  trailFade: 0.93

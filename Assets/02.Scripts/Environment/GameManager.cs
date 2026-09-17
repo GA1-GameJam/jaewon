@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     public Player Player => _player;
     [Header("클릭시 소환 vfx")][SerializeField]private GameObject _clickVfx;
+
+    private CameraShake _cameraShake;
+    public CameraShake CameraShake => _cameraShake;
     public GameObject ClickVfx => _clickVfx;
     private void Awake()
     {
@@ -31,7 +35,13 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Camera mainCamera = Camera.main;
+        if (mainCamera != null)
+        {
+            _cameraShake = mainCamera.GetComponent<CameraShake>();
+            if (_cameraShake == null)
+                _cameraShake = mainCamera.gameObject.AddComponent<CameraShake>();
+        }
     }
 
     // Update is called once per frame
@@ -47,6 +57,8 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0.2f;
         _gameOverPanel.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private IEnumerator FadeOutBackgroundMusic(float duration)

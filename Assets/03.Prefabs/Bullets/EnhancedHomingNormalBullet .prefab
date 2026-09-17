@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3386111993925488431}
   - component: {fileID: 8823541199732598621}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 5794707890225951006}
   - component: {fileID: -6009172169140264930}
   - component: {fileID: -8545891334924960305}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'EnhancedHomingNormalBullet '
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -247,11 +247,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4606264528693911947}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5bf4eedd198e424d8a04c9267078782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridControl
+  targetCamera: {fileID: 0}
+  textureSize: 512
+  stampSize: 0.045
+  trailStrength: 1
+  trailFade: 0.93
 --- !u!1 &4711511585599802555
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6392689868019027175}
   - component: {fileID: 8251494856283262373}
-  m_Layer: 12
+  m_Layer: 7
   m_Name: ParticleShiled
   m_TagString: BulletWall
   m_Icon: {fileID: 0}

@@ -12,6 +12,8 @@ public abstract class SkillParent : MonoBehaviour
         if (_level > _levelForAwakening)
         {
             Awakening();
+            GameManager.Instance.CameraShake.Shake(4,2);
+
         }
     }
 

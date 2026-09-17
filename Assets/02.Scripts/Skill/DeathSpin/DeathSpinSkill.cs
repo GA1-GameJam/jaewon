@@ -31,6 +31,8 @@ public class DeathSpinSkill : SkillParent
 
     private void SpawnDeathSpin()
     {
+        GameManager.Instance.CameraShake.Shake(0.2f,0.2f);
+
         if (_deathSpinPrefab == null || _player == null)
         {
             return;

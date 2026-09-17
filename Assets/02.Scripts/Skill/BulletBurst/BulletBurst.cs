@@ -35,6 +35,7 @@ public class BulletBurst : SkillParent
 
     private void Burst()
     {
+        GameManager.Instance.CameraShake.Shake(0.2f,0.2f);
         if (_player == null || PoolManager.Instance == null ||
             PoolManager.Instance.BulletPoolFactory == null)
         {

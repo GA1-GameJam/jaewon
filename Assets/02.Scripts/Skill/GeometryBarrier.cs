@@ -134,6 +134,8 @@ public class GeometryBarrier : SkillParent
         if (other.CompareTag("Enemy"))
         {
             PoolManager.Instance.EnemyPoolFactory.Release(other.gameObject);
+            GameManager.Instance.CameraShake.Shake(0.2f,0.2f);
+
             StartScaleDownToZero();
         }
     }

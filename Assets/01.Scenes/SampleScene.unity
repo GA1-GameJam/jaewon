@@ -1000,8 +1000,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0}
+  m_SizeDelta: {x: 0, y: 3}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &593686115
 MonoBehaviour:
@@ -2194,7 +2194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   _curEnemyPrefabs: []
-  _spawnInterval: 1
+  _spawnInterval: 0.5
   _minSpawnDistance: 7
   _maxSpawnDistance: 20
 --- !u!4 &1218866751
@@ -2231,8 +2231,8 @@ MonoBehaviour:
   - {fileID: 8279852660396946054, guid: 751c42a641add0449aca7e7aa435ba17, type: 3}
   - {fileID: 8279852660396946054, guid: 4853a67bea5aa5546a5b3e0ed31126fa, type: 3}
   - {fileID: 8279852660396946054, guid: 5c62388c2bede4f46acc29acb95cba77, type: 3}
-  _enhanceTime: 10
-  _healthEnhanceRate: 0.2
+  _enhanceTime: 15
+  _healthEnhanceRate: 0.5
 --- !u!4 &1233765517 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2667386329329089772, guid: ee0596248063f32439bcd1140853d0a5, type: 3}
@@ -2893,6 +2893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1567583350}
   - component: {fileID: 1567583349}
+  - component: {fileID: 1567583351}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2914,7 +2915,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   _player: {fileID: 590216655}
   _gameOverPanel: {fileID: 1675962608}
-  _backgroundMusic: {fileID: 0}
+  _backgroundMusic: {fileID: 2085860500}
   _clickVfx: {fileID: 8530703076479648669, guid: 9c1dd50ac58fc7244bfc3ca1a6a46fbb, type: 3}
 --- !u!4 &1567583350
 Transform:
@@ -2931,6 +2932,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1567583351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567583348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8471f3069cd5ab3499dcf5f28ef33727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraShake
 --- !u!1 &1602636341
 GameObject:
   m_ObjectHideFlags: 0
@@ -3804,7 +3817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1675962609
 RectTransform:
   m_ObjectHideFlags: 0

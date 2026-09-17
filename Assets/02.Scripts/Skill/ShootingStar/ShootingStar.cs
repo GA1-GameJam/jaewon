@@ -32,6 +32,8 @@ public class ShootingStar : SkillParent
 
     public void Spawn()
     {
+        GameManager.Instance.CameraShake.Shake(0.2f,0.2f);
+
         if (_player == null || _shootingStarPrefab == null ||
             PoolManager.Instance == null || PoolManager.Instance.BulletPoolFactory == null)
         {

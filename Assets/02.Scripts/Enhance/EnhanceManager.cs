@@ -70,6 +70,8 @@ public class EnhanceManager : MonoBehaviour
         //실행 내역에 따른 능력 적용 
 
         _enhancePanelManager.OffEnhancePanel();
+        GameManager.Instance.CameraShake.Shake(0.2f,0.2f);
+
     }
 
     public void CreateExp(Vector3 spawnPoint)
