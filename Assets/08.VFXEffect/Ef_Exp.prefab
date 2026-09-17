@@ -5049,7 +5049,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Exp
   _expAmount: 30
-  _moveSpeed: 8
+  _moveSpeed: 16
   _waveAmplitude: 0.35
   _waveFrequency: 8
   _collectDistance: 0.2

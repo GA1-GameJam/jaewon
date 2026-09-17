@@ -1,23 +1,52 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIAnimator : MonoBehaviour
 {
-    [SerializeField] private float _duration = 0.25f;
-    [SerializeField] private AnimationCurve _ease = null;
-    [SerializeField] private bool _openOnEnable;
 
+    private EventTrigger _eventTrigger;
+    
+     private float _duration = 0.25f;
+     private AnimationCurve _ease = null;
+     private bool _openOnEnable;
+    
     private Vector3 _openScale;
     private Coroutine _scaleCoroutine;
 
     private void Awake()
     {
+        _eventTrigger = GetComponent<EventTrigger>();
+        if (_eventTrigger == null)
+        {
+            _eventTrigger = gameObject.AddComponent<EventTrigger>();
+        }
+
+        EventTrigger.Entry pointerEnter = new()
+        {
+            eventID = EventTriggerType.PointerEnter
+        };
+        pointerEnter.callback.AddListener(_ => StartHover());
+        _eventTrigger.triggers.Add(pointerEnter);
+
+        EventTrigger.Entry pointerExit = new()
+        {
+            eventID = EventTriggerType.PointerExit
+        };
+        pointerExit.callback.AddListener(_ => StopHover());
+        _eventTrigger.triggers.Add(pointerExit);
+        
+        
+        
+        
         _openScale = transform.localScale;
 
         if (_ease == null || _ease.length == 0)
         {
             _ease = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
         }
+        Open();
     }
 
     private void OnEnable()
@@ -70,5 +99,15 @@ public class UIAnimator : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void StartHover()
+    {
+        PlayScaleAnimation(_openScale * 1.1f);
+    }
+
+    public void StopHover()
+    {
+        PlayScaleAnimation(_openScale);
     }
 }

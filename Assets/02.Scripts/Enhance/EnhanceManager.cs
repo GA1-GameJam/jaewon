@@ -7,8 +7,8 @@ public class EnhanceManager : MonoBehaviour
     private static EnhanceManager _instance;
     public static EnhanceManager Instance=>_instance;
     
-    private EnhancePanelManager enhancePanelManager;
-    public EnhancePanelManager EnhancePanelManager => enhancePanelManager;
+    private EnhancePanelManager _enhancePanelManager;
+    public EnhancePanelManager EnhancePanelManager => _enhancePanelManager;
     [Header("경험치량 표시하는 객체 참조")][SerializeField]
     private EnhanceIndicator _enhanceIndicator;
     
@@ -35,7 +35,7 @@ public class EnhanceManager : MonoBehaviour
 
     private void Start()
     {
-        enhancePanelManager = GetComponent<EnhancePanelManager>();
+        _enhancePanelManager = GetComponent<EnhancePanelManager>();
     }
     public void TakeExp(float input)
     {
@@ -59,14 +59,14 @@ public class EnhanceManager : MonoBehaviour
         _curExp-= _expAmountForEnhance;
         _expAmountForEnhance *= _expAmountMultipier;
         
-        enhancePanelManager.OnEnhancePanel();
+        _enhancePanelManager.OnEnhancePanel();
     }
 
     public void EndEnhance()
     {
         //실행 내역에 따른 능력 적용 
 
-        enhancePanelManager.OffEnhancePanel();
+        _enhancePanelManager.OffEnhancePanel();
     }
 
     public void CreateExp(Vector3 spawnPoint)

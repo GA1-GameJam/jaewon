@@ -24,6 +24,12 @@ public class Player : MonoBehaviour
         if (input < 0) return;
         _playerStat.AttackDamage+= input;
     }
+
+    public void ExpMutliplierUp(float input)
+    {
+        if (input < 0) return;
+        _playerStat.ExpGetMultiplier += input;
+    }
     
     public void BulletCountUp(int input)
     {

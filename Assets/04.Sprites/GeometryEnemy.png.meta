@@ -452,12 +452,12 @@ TextureImporter:
       name: GeometryEnemy_27
       rect:
         serializedVersion: 2
-        x: 1242
-        y: 133
-        width: 21
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 198
+        y: 278
+        width: 104
+        height: 64
+      alignment: 9
+      pivot: {x: 0.24805002, y: 0.50919765}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

@@ -89,5 +89,16 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public void Despawn()
     {
+        DeSpawnEvent();
+    }
+    
+    private void DeSpawnEvent()
+    {
+        MakeEnemyChild makeEnemyChild=GetComponent<MakeEnemyChild>();
+        if (makeEnemyChild != null)
+        {
+            makeEnemyChild.MakeChild();
+        }
+        
     }
 }
