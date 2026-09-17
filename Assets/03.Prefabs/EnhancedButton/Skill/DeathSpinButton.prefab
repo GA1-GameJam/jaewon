@@ -16,9 +16,8 @@ GameObject:
   - component: {fileID: 7353302045749014012}
   - component: {fileID: 7648698755726561439}
   - component: {fileID: 3430605313803806414}
-  - component: {fileID: 7991031643236632749}
   m_Layer: 5
-  m_Name: RotateBladeButton
+  m_Name: DeathSpinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,21 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotateBladeSkillButton
   _enhancedLimitedCount: 5
   _enhancedCount: 1
-  _bindingSkill: {fileID: 3628507544042228159, guid: cabcabc2198a7a741b2667f091c3fff3, type: 3}
---- !u!114 &7991031643236632749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 958839405148135823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdda9e3cc45e304fa669f386c0e7466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SkillColor
-  _startColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
-  _endColor: {r: 3.3376963, g: 0, b: 2.8016107, a: 1}
+  _bindingSkill: {fileID: 9111973917918937009, guid: 2c4e3822024011349b09ade925004277, type: 3}
 --- !u!1 &1452527047164325682
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +321,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD68C\uC804 \uCE7C\uB0A0 \uC0DD\uC131\n\n"
+  m_text: "\uAC00\uC2DC\uD3ED\uD48D\uC774 \uC18C\uD658\uB418\uC5B4 \uC801\uB4E4\uC744
+    \uACF5\uACA9\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
   m_sharedMaterial: {fileID: -5471322265876472391, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
@@ -473,7 +459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD68C\uC804 \uCE7C\uB0A0 "
+  m_text: "\uAC00\uC2DC \uD3ED\uD48D\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
   m_sharedMaterial: {fileID: -5471322265876472391, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}

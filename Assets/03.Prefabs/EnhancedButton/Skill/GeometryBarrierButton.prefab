@@ -323,7 +323,6 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}

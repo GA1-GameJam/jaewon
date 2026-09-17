@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhancePanelManager
   _enhancePanel: {fileID: 719262822}
   _enhanceButtons:
-  - {fileID: -253976328112198326, guid: b75c2f0ce5f85aa49baebcde167a813a, type: 3}
+  - {fileID: 3430605313803806414, guid: a8029bb7a06f458489ad39396f9ff976, type: 3}
   - {fileID: -6673019608486634566, guid: d82100e275579d94e9c0a3becb4f0114, type: 3}
   _displayButtonCount: 3
 --- !u!1 &1390158164
