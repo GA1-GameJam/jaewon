@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2688897237653044279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543305338175939230}
+  - component: {fileID: 4310190464325058663}
+  m_Layer: 0
+  m_Name: BulletBurst
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1543305338175939230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688897237653044279}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4310190464325058663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688897237653044279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e148696b8e7edb141a017cc5379549e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletBurst
+  _levelForAwakening: 6
+  _burstBulletCount: 12
+  _burstCoolTime: 3
+  _awakeningRate: 0.5
+  _bullets:
+  - {fileID: 1475695886619837818, guid: 88d7bc1c26b02f145abdeedfced6bbc9, type: 3}
+  - {fileID: 1475695886619837818, guid: 9869724b02bf53e45adcd268fb5f9646, type: 3}
+  - {fileID: 1475695886619837818, guid: eb1ce712b5d81a446948aeeace092f5f, type: 3}
+  - {fileID: 1475695886619837818, guid: b82b3fc8b7087c24ca4e6947fd90e97d, type: 3}
+  - {fileID: 1475695886619837818, guid: 4503b434b1be6aa4283d09a812b182f8, type: 3}
+  - {fileID: 1475695886619837818, guid: d04146f1856d9c44fa9625eed2d8d693, type: 3}

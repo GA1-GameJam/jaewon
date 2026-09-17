@@ -5,10 +5,17 @@ public class BounceBullet : BulletMove, IBounceable
     private Vector2 _direction;
     private bool _directionInitialized;
     [Header("바운딩 횟수")][SerializeField]private int _bounceCount;
+    private int _initialBounceCount;
+
+    private void Awake()
+    {
+        _initialBounceCount = Mathf.Max(0, _bounceCount);
+    }
 
     private void OnEnable()
     {
         _directionInitialized = false;
+        _bounceCount = _initialBounceCount;
     }
 
     protected override void Move()

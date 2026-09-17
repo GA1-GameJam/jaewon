@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class RotateBladeSkillButton : EnhanceButton
+public class BulletBurstSkillButton : EnhanceButton
 {
-    
+  
 
     protected override void OnClick()
     {

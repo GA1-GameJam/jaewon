@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   _bulletStat:
-    BulletType: 0
     BulletSpeed: 15
     BulletDamage: 50
     HitEnableCount: 0

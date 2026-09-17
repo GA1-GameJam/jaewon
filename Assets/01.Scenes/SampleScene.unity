@@ -1554,7 +1554,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhancePanelManager
   _enhancePanel: {fileID: 719262822}
   _enhanceButtons:
-  - {fileID: 3430605313803806414, guid: 685610ba6e0a0324f9b9ac3bbd1b9321, type: 3}
+  - {fileID: 2942965219240225448, guid: af7a9bd46a3d4f241b6323ed7f075917, type: 3}
+  - {fileID: -6673019608486634566, guid: d82100e275579d94e9c0a3becb4f0114, type: 3}
   _displayButtonCount: 3
 --- !u!1 &1390158164
 GameObject:
