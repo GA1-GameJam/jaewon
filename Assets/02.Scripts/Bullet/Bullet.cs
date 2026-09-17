@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour, IPoolable
 
     public void Despawn()
     {
+        AudioManager.Instance.PlayEffectClip(_bulletStat.BulletDestroySound);
         if (_bulletStat != null && _bulletStat.BulletDestroyVfx != null)
         {
             GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletDestroyVfx, transform.position, transform.rotation);
@@ -46,6 +47,8 @@ public class Bullet : MonoBehaviour, IPoolable
         if (other.CompareTag("Enemy"))
         {
             other.GetComponent<Enemy>()?.TakeDamage(_bulletStat.BulletDamage*GameManager.Instance.Player.PlayerStat.AttackDamage);
+            AudioManager.Instance.PlayEffectClip(_bulletStat.BulletHitSound);
+
             MakeHitEffect();
             if (--_remainHitCount <= 0)
             {

@@ -41,8 +41,10 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            Instantiate(_playerStat.PlayerDieVfx,transform.position,Quaternion.identity);
+            GameManager.Instance.GameOver();
             Destroy(gameObject);
-            Time.timeScale = 0f;
+
         }
     }
 }

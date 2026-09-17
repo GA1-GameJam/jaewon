@@ -113,6 +113,7 @@ public class Enemy : MonoBehaviour, IPoolable
 
     public void Despawn()
     {
+        AudioManager.Instance.PlayEffectClip(_enemyStat.EnemyDieAudioClip);
         DeSpawnEvent();
         MakeDeathVfx();
     }

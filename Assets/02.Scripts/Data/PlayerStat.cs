@@ -9,5 +9,5 @@ public class PlayerStat
     public float AttackSpeed;
     public float MoveSpeed;
     public float ExpGetMultiplier;
-
+    public GameObject PlayerDieVfx;
 }

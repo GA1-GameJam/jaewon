@@ -14677,5 +14677,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dfffeea22469cd47a166e808dc953fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EffectAutoDespawn
-  _lifeTime: 0.5
+  _lifeTime: 3
   _autoCalculateDuration: 1

@@ -8,4 +8,6 @@ public class BulletStat
     public int HitEnableCount;
     public GameObject BulletHitVfx;
     public GameObject BulletDestroyVfx;
+    public AudioClip BulletHitSound;
+    public AudioClip BulletDestroySound;
 }

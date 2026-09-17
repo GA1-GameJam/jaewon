@@ -52,7 +52,7 @@ public class EnhancePanelManager : MonoBehaviour
     {
         _enhancePanel.SetActive(true);
 
-        Time.timeScale = 0f;
+        Time.timeScale = 0.01f;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;

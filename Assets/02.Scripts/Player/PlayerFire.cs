@@ -11,6 +11,8 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private Transform _bulletPoint;
     [Header("총알 간격")]
     [SerializeField] private float _bulletSpacing=0.5f;
+    [Header("총알 발사 사운드")]
+    [SerializeField] private AudioClip _bulletFireSound;
     private Player _player;
     private float _curTime;
 
@@ -70,6 +72,7 @@ public class PlayerFire : MonoBehaviour
     {
         CheckEnableUpgrade();
         
+        AudioManager.Instance.PlayEffectClip(_bulletFireSound);
         _curTime = _basicBulletCoolTime*_player.PlayerStat.AttackSpeed;
 
         Transform fireTransform = _fireHead != null ? _fireHead.transform : transform;

@@ -7,4 +7,5 @@ public class EnemyStat
     public float Health;
     public float MoveSpeed;
     public GameObject EnemyDieVfx;
+    public AudioClip EnemyDieAudioClip;
 }

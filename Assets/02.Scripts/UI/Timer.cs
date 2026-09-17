@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour
     private TextMeshProUGUI _text;
 
     private float _gameTime;
+    public float GameTime=>_gameTime;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
