@@ -681,11 +681,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   _playerStat:
-    BulletCount: 4
-    AttackDamage: 10
+    BulletCount: 1
+    AttackDamage: 4
     AttackSpeed: 1
     MoveSpeed: 1
-    ExpGetMultiplier: 1
+    ExpGetMultiplier: 4
 --- !u!114 &590216656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,11 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhancePanelManager
   _enhancePanel: {fileID: 719262822}
   _enhanceButtons:
-  - {fileID: 2788993786704507277, guid: da96c28cf1fa3754f9134f19ba9c50c6, type: 3}
-  - {fileID: 8393921150282212969, guid: a5c6b0b8bbfef2e46bbd698422288dd2, type: 3}
-  - {fileID: 8393921150282212969, guid: d82100e275579d94e9c0a3becb4f0114, type: 3}
-  - {fileID: 8393921150282212969, guid: 279b7d3ca7e92c54fbe89d2b7e99338b, type: 3}
-  - {fileID: -6975140603072540643, guid: 395a6a61e8c3cdd4aa8670a78a0443ed, type: 3}
+  - {fileID: 3430605313803806414, guid: 685610ba6e0a0324f9b9ac3bbd1b9321, type: 3}
   _displayButtonCount: 3
 --- !u!1 &1390158164
 GameObject:

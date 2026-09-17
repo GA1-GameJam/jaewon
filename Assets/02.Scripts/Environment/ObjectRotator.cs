@@ -45,4 +45,10 @@ public class ObjectRotator : MonoBehaviour
 
         transform.Rotate(new Vector3(0f, 0f, _currentRotateSpeed * Time.deltaTime));
     }
+
+    public void ControlRotateSpeed(float speed)
+    {
+        _rotateSpeed=speed;
+        StartRotate();
+    }
 }

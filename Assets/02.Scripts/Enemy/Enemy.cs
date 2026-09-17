@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour, IPoolable
     private void MakeDeathVfx()
     {
         
-            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_enemyStat.enemyDieVfx, transform.position, transform.rotation);
+            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_enemyStat.EnemyDieVfx, transform.position, transform.rotation);
             if (vfx != null)
             {
                 EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();

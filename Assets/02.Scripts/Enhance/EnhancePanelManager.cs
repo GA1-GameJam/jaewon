@@ -127,38 +127,23 @@ public class EnhancePanelManager : MonoBehaviour
             }
         }
     }
-    
 
-    public void SwitchButtonsToAwakening(EnhanceButton button)
+
+    public void DeleteButtonsToAwakening(EnhanceButton button)
     {
-        for (int i = 0; i < _spawnedButtons.Count; i++)
+        if (button == null)
         {
-            if (_spawnedButtons[i] == button)
-            {
-                // 각성 버튼으로 교체
-                EnhanceButton awakeningButton =
-                    button.AwakeingButtons;
-
-                if (awakeningButton == null)
-                    return;
-
-                // 기존 버튼 제거
-                Destroy(_spawnedButtons[i].gameObject);
-
-                // 각성 버튼 생성
-                EnhanceButton newButton =
-                    Instantiate(
-                        awakeningButton,
-                        _enhancePanel.transform,
-                        false
-                    );
-
-                newButton.gameObject.SetActive(false);
-
-                // 리스트 교체
-                _spawnedButtons[i] = newButton;
-                break;
-            }
+            return;
         }
+
+        _buttonsCandidate.Remove(button);
+
+        if (!_spawnedButtons.Remove(button))
+        {
+            return;
+        }
+
+        button.gameObject.SetActive(false);
+        Destroy(button.gameObject);
     }
 }
