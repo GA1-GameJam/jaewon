@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class EnhancePanelManager : MonoBehaviour
 {
     [Header("메니징 패널")]
+    [FormerlySerializedAs("_EnhancePanel")]
     [SerializeField] private GameObject _enhancePanel;
     public GameObject EnhancePanel => _enhancePanel;
     [Header("인헨스 버튼 프리팹 목록")]
@@ -125,7 +127,7 @@ public class EnhancePanelManager : MonoBehaviour
             }
         }
     }
-
+    
 
     public void SwitchButtonsToAwakening(EnhanceButton button)
     {
@@ -155,7 +157,6 @@ public class EnhancePanelManager : MonoBehaviour
 
                 // 리스트 교체
                 _spawnedButtons[i] = newButton;
-
                 break;
             }
         }

@@ -13,7 +13,7 @@ public class ObjectRotator : MonoBehaviour
 
     private void Start()
     {
-        StartRotate(_rotateSpeed);
+        StartRotate();
     }
 
     private void Update()
@@ -24,9 +24,8 @@ public class ObjectRotator : MonoBehaviour
         }
     }
 
-    public void StartRotate(float speed)
+    public void StartRotate()
     {
-        _targetRotateSpeed = speed;
         _currentRotateSpeed = 0f;
         _isRotating = true;
     }
@@ -41,7 +40,7 @@ public class ObjectRotator : MonoBehaviour
     {
         _currentRotateSpeed = Mathf.MoveTowards(
             _currentRotateSpeed,
-            _targetRotateSpeed,
+            _rotateSpeed,
             _acceleration * Time.deltaTime);
 
         transform.Rotate(new Vector3(0f, 0f, _currentRotateSpeed * Time.deltaTime));

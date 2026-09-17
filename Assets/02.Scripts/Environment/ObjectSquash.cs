@@ -5,7 +5,9 @@ public class ObjectSquash : MonoBehaviour
 {
     [Header("스쿼시 비율")]
     [SerializeField] private Vector3 _squashScale = new Vector3(1.2f, 0.8f, 1f);
-
+    [Header("스쿼시 속도")]
+    [SerializeField]
+    private float _squashTime = 0.5f;
     private Vector3 _originalScale;
     private Coroutine _squashCoroutine;
 
@@ -14,9 +16,12 @@ public class ObjectSquash : MonoBehaviour
         _originalScale = transform.localScale;
     }
 
-    public void StartSquash(float squashTime)
+    public void StartSquash()
     {
-        if (squashTime <= 0f)
+        // 풀에서 재사용될 때마다 현재 오브젝트 스케일을 기준값으로 사용한다.
+        _originalScale = transform.localScale;
+
+        if (_squashTime <= 0f)
         {
             transform.localScale = _originalScale;
             return;
@@ -28,15 +33,10 @@ public class ObjectSquash : MonoBehaviour
         }
 
         transform.localScale = _originalScale;
-        _squashCoroutine = StartCoroutine(SquashRoutine(squashTime));
+        _squashCoroutine = StartCoroutine(SquashRoutine(_squashTime));
     }
 
-    // 기존 호출 이름과의 호환성을 유지한다.
-    public void StartSquerse(float squashTime)
-    {
-        StartSquash(squashTime);
-    }
-
+ 
     private IEnumerator SquashRoutine(float squashTime)
     {
         float halfTime = squashTime * 0.5f;

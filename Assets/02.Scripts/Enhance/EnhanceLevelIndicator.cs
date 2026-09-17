@@ -3,8 +3,10 @@ using UnityEngine.UI;
 
 public class EnhanceLevelIndicator : MonoBehaviour
 {
-    [SerializeField] private Color _baseColor = new(0.53f, 0.81f, 0.92f, 1f);
-    [SerializeField] private Color _maxLevelColor = Color.red;
+    [ColorUsage(true, true)]
+    [SerializeField] private Color _baseColor = new(0.25f, 2.25f, 2.5f, 1f);
+    [ColorUsage(true, true)]
+    [SerializeField] private Color _maxLevelColor = new(2.5f, 0.25f, 0.25f, 1f);
 
     private Image _enhancedImage;
     private Material _enhancedMaterial;

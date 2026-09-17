@@ -3,7 +3,7 @@ using UnityEngine;
 public class BulletColor : MonoBehaviour
 {
     
-    private Color _bulletColor;
+    private Color _bulletColor = new(0.25f, 2.25f, 2.5f, 1f);
     public Color GetBulletColor=> _bulletColor;
     private SpriteRenderer _spriteRenderer;
     
@@ -17,12 +17,12 @@ public class BulletColor : MonoBehaviour
     public void DecisionColorToAttackDamage()
     {
         
-        float normalizedDamage =
-            (GameManager.Instance.Player.PlayerStat.AttackDamage - 1f) / 9f;
+        float normalizedDamage = Mathf.Clamp01(
+            (GameManager.Instance.Player.PlayerStat.AttackDamage - 1f) / 9f);
 
         _bulletColor = Color.Lerp(
-            Color.cyan,
-            Color.red,
+            new Color(0.25f, 2.25f, 2.5f, 1f),
+            new Color(2.5f, 0.25f, 0.25f, 1f),
             normalizedDamage
         );
         

@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5428d93fd4c6611449a999c34b7b07ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -142,8 +142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _basicHealth: 100
+  _minScale: {x: 0.8, y: 0.8, z: 0.8}
+  _maxScale: {x: 1.2, y: 1.2, z: 1.2}
   _enemyStat:
-    EnemyType: 0
     Health: 1
     MoveSpeed: 1
 --- !u!114 &6136380402276849671
@@ -158,8 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f173c71519838d94d9bade854b53f4a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyColor
-  _fullHpColor: {r: 1, g: 1, b: 1, a: 1}
-  _lowHpColor: {r: 1, g: 0, b: 0, a: 1}
+  _fullHpColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
+  _lowHpColor: {r: 2.5, g: 0.25, b: 0.25, a: 1}
 --- !u!50 &-5196508534946273982
 Rigidbody2D:
   serializedVersion: 5
@@ -265,3 +266,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSquash
   _squashScale: {x: 1.2, y: 0.8, z: 1}
+  squashTime: 0.5

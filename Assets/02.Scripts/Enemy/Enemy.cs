@@ -4,7 +4,12 @@ public class Enemy : MonoBehaviour, IPoolable
 {
     [Header("기본 체력")]
     [SerializeField] private float _basicHealth = 10f;
-
+    [Header("가능한 최소 크기")]
+    [SerializeField] private Vector3 _minScale = new Vector3(0.8f, 0.8f, 0.8f);
+    [Header("가능한 최대 크기")]
+    [SerializeField] private Vector3 _maxScale = new Vector3(1.2f, 1.2f, 1.2f);
+    
+    
     [SerializeField] private EnemyStat _enemyStat;
     public EnemyStat EnemyStat => _enemyStat;
 
@@ -52,22 +57,41 @@ public class Enemy : MonoBehaviour, IPoolable
             _enemyColor = GetComponent<EnemyColor>();
         }
 
+        SetRandomScale();
         SpawnEvent();
-        ApplyHealthMultiplier(1f);
+        //ApplyHealthMultiplier(1f);
     }
 
+    private void SetRandomScale()
+    {
+        float scale = Random.Range(0f, 1f);
+        transform.localScale = Vector3.Lerp(_minScale, _maxScale, scale);
+    }
+    
     private void SpawnEvent()
     {
         ObjectSquash objectSquash=GetComponent<ObjectSquash>();
         if (objectSquash != null)
         {
-            objectSquash.StartSquash(0.5f);
+            objectSquash.StartSquash();
         }
 
         ObjectRotator objectRotator = GetComponent<ObjectRotator>();
         if (objectRotator != null)
         {
-            objectRotator.StartRotate(0.5f);
+            objectRotator.StartRotate();
+        }
+        
+        ObjectScaler objectScaler = GetComponent<ObjectScaler>();
+        if (objectScaler != null)
+        {
+            objectScaler.SizeUpStart();
+        }
+        
+        ObjectViber objectViber = GetComponent<ObjectViber>();
+        if (objectViber != null)
+        {
+            objectViber.StartVibe();
         }
     }
     public void ApplyHealthMultiplier(float multiplier)

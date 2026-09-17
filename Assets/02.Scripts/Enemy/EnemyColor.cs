@@ -4,15 +4,21 @@ using UnityEngine;
 public class EnemyColor : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
-    private Color _enemyColor = Color.white;
+    private Color _enemyColor = new(0.25f, 2.25f, 2.5f, 1f);
 
     [Header("체력별 색상 (최대 체력 -> 빈사)")]
-    [SerializeField] private Color _fullHpColor = Color.white;
-    [SerializeField] private Color _lowHpColor = Color.red;
+    [ColorUsage(true, true)]
+    [SerializeField] private Color _fullHpColor = new(0.25f, 2.25f, 2.5f, 1f);
+    [ColorUsage(true, true)]
+    [SerializeField] private Color _lowHpColor = new(2.5f, 0.25f, 0.25f, 1f);
 
     private void Awake()
     {
-        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        if (_spriteRenderer == null)
+        {
+            _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        }
     }
 
     public void DecisionColorByHp(float maxHp, float hp)
