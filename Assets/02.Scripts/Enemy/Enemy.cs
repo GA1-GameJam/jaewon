@@ -57,6 +57,8 @@ public class Enemy : MonoBehaviour, IPoolable
             _enemyColor = GetComponent<EnemyColor>();
         }
 
+        // 풀에서 생성되는 자식 적도 체력과 초기 색상을 반드시 초기화합니다.
+        ApplyHealthMultiplier(1f);
         SetRandomScale();
         SpawnEvent();
         //ApplyHealthMultiplier(1f);
