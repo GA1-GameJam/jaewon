@@ -1554,7 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhancePanelManager
   _enhancePanel: {fileID: 719262822}
   _enhanceButtons:
-  - {fileID: 2942965219240225448, guid: af7a9bd46a3d4f241b6323ed7f075917, type: 3}
+  - {fileID: -253976328112198326, guid: b75c2f0ce5f85aa49baebcde167a813a, type: 3}
   - {fileID: -6673019608486634566, guid: d82100e275579d94e9c0a3becb4f0114, type: 3}
   _displayButtonCount: 3
 --- !u!1 &1390158164
@@ -1603,12 +1603,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390158164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: d9d66429d76d45e4588709a0f48707ed, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1616,8 +1616,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 57964f51218f1d040b62a85bc00fef58, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 5928162435105382926}
   - component: {fileID: 7353302045749014012}
   - component: {fileID: 7648698755726561439}
-  - component: {fileID: -253976328112198326}
+  - component: {fileID: 3430605313803806414}
   m_Layer: 5
-  m_Name: GeometryBarrierButton
+  m_Name: ShootingStarButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnhanceLevelIndicator
   _baseColor: {r: 0, g: 0.9477272, b: 1, a: 1}
   _maxLevelColor: {r: 1, g: 0, b: 0.84357405, a: 1}
---- !u!114 &-253976328112198326
+--- !u!114 &3430605313803806414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotateBladeSkillButton
   _enhancedLimitedCount: 5
   _enhancedCount: 1
-  _bindingSkill: {fileID: 5892408546843053325, guid: 3af0e3010b4dcef4caa22b81078df0aa, type: 3}
+  _bindingSkill: {fileID: 8831612439143263489, guid: 893d5ffc4b4e1c042b0e6cbf179c748c, type: 3}
 --- !u!1 &1452527047164325682
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uAE30\uD558 \uBCF4\uD638\uB9C9\n"
+  m_text: "\uC720\uC131\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
   m_sharedMaterial: {fileID: -5471322265876472391, guid: d7e480669156c3143ac992fdf54ff6a4, type: 2}
