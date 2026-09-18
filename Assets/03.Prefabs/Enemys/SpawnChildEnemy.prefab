@@ -164,7 +164,7 @@ MonoBehaviour:
   _enemyStat:
     Health: 1
     MoveSpeed: 1
-    EnemyDieVfx: {fileID: 4454377697536815295, guid: 5634c66826a50184abb461e59b31758a, type: 3}
+    EnemyDieVfx: {fileID: 4454377697536815295, guid: c882fe21206aaba47ad4e25f53db8346, type: 3}
     EnemyDieAudioClip: {fileID: 8300000, guid: 0ae75befa3473a2499f6de2b1463ef4a, type: 3}
 --- !u!114 &6136380402276849671
 MonoBehaviour:

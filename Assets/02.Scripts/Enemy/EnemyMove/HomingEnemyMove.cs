@@ -18,10 +18,11 @@ public class HomingEnemyMove : EnemyMove
             direction = Vector3.up;
 
         }
+        direction.Normalize();
         transform.Translate(
             direction * 
             (_enemy.EnemyStat.MoveSpeed * _basicMoveSpeed * Time.deltaTime),
-            Space.Self
+            Space.World
         );
         
     }

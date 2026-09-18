@@ -18,7 +18,7 @@ public class CameraShake : MonoBehaviour
 
     public void Shake(float strength, float duration)
     {
-        StartShake(strength, duration);
+        StartShake(strength*0.5f, duration);
     }
 
     private void StartShake(float strength, float duration)

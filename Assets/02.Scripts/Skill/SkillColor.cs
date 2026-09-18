@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class SkillColor : MonoBehaviour
 {
+    private static readonly int ColorId = Shader.PropertyToID("_Color");
+    private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+    private static readonly int RendererColorId = Shader.PropertyToID("_RendererColor");
+
     [Header("최소 레벨 색상")]
     [ColorUsage(true, true)]
     [SerializeField] private Color _startColor = new(0.25f, 2.25f, 2.5f, 1f);
@@ -34,8 +38,9 @@ public class SkillColor : MonoBehaviour
 
         _propertyBlock ??= new MaterialPropertyBlock();
         _spriteRenderer.GetPropertyBlock(_propertyBlock);
-        _propertyBlock.SetColor("_Color", bladeColor);
-        _propertyBlock.SetColor("_RendererColor", Color.white);
+        _propertyBlock.SetColor(ColorId, bladeColor);
+        _propertyBlock.SetColor(BaseColorId, bladeColor);
+        _propertyBlock.SetColor(RendererColorId, Color.white);
         _spriteRenderer.SetPropertyBlock(_propertyBlock);
     }
 }

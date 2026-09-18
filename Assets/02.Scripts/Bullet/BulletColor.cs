@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class BulletColor : MonoBehaviour
 {
+    private static readonly int ColorId = Shader.PropertyToID("_Color");
+    private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+    private static readonly int RendererColorId = Shader.PropertyToID("_RendererColor");
+
     [Header("공격력 최소 색상")]
     [ColorUsage(true, true)]
     [SerializeField] private Color _startColor = new(0.25f, 2.25f, 2.5f, 1f);
@@ -27,7 +31,7 @@ public class BulletColor : MonoBehaviour
     {
         
         float normalizedDamage = Mathf.Clamp01(
-            (GameManager.Instance.Player.PlayerStat.AttackDamage - 1f) / 9f);
+            (GameManager.Instance.Player.PlayerStat.AttackDamage - 1f) / 3f);
 
         _bulletColor = Color.Lerp(
             _startColor,
@@ -50,8 +54,9 @@ public class BulletColor : MonoBehaviour
             _propertyBlock ??= new MaterialPropertyBlock();
 
             _spriteRenderer.GetPropertyBlock(_propertyBlock);
-            _propertyBlock.SetColor("_Color", _bulletColor);
-            _propertyBlock.SetColor("_RendererColor", Color.white);
+            _propertyBlock.SetColor(ColorId, _bulletColor);
+            _propertyBlock.SetColor(BaseColorId, _bulletColor);
+            _propertyBlock.SetColor(RendererColorId, Color.white);
             _spriteRenderer.SetPropertyBlock(_propertyBlock);
         }
     }

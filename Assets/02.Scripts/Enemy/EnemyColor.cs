@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class EnemyColor : MonoBehaviour
 {
+    private static readonly int ColorId = Shader.PropertyToID("_Color");
+    private static readonly int BaseColorId = Shader.PropertyToID("_BaseColor");
+    private static readonly int RendererColorId = Shader.PropertyToID("_RendererColor");
+
     private SpriteRenderer _spriteRenderer;
     private MaterialPropertyBlock _propertyBlock;
     private Color _enemyColor = new(0.25f, 2.25f, 2.5f, 1f);
@@ -42,8 +46,9 @@ public class EnemyColor : MonoBehaviour
             _propertyBlock ??= new MaterialPropertyBlock();
 
             _spriteRenderer.GetPropertyBlock(_propertyBlock);
-            _propertyBlock.SetColor("_Color", _enemyColor);
-            _propertyBlock.SetColor("_RendererColor", Color.white);
+            _propertyBlock.SetColor(ColorId, _enemyColor);
+            _propertyBlock.SetColor(BaseColorId, _enemyColor);
+            _propertyBlock.SetColor(RendererColorId, Color.white);
             _spriteRenderer.SetPropertyBlock(_propertyBlock);
         }
     }

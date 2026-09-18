@@ -128,7 +128,7 @@ public class Enemy : MonoBehaviour, IPoolable
                 EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
                 if (effect != null)
                 {
-                    effect.SetColor(_enemyColor.GetEnemyColor);
+                    //effect.SetColor(_enemyColor.GetEnemyColor);
                 }
             }
         

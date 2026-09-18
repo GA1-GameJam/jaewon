@@ -66,6 +66,15 @@ public class EffectAutoDespawn : MonoBehaviour, IPoolable
             var main = ps.main;
             main.startColor = color;
         }
+
+        // PoolFactory.Get() calls Spawn() before the caller can set the color.
+        // Restart the systems so particles emitted with the prefab's default
+        // color are not left visible in the pooled effect.
+        foreach (var ps in _particleSystems)
+        {
+            ps.Clear(true);
+            ps.Play(true);
+        }
     }
 
     private void OnEnable()
