@@ -16,6 +16,8 @@ public class PlayerFire : MonoBehaviour
     [SerializeField] private AudioClip _bulletFireSound;
     [Header("조준 조이스틱")]
     [SerializeField] private Joystick _fireHeadJoystick;
+    [Header("총알 발사시 effect")]
+    [SerializeField] private GameObject _bulletFireEffect;
     private Player _player;
     private float _curTime;
 
@@ -76,7 +78,7 @@ public class PlayerFire : MonoBehaviour
     private void FireBullet()
     {
         CheckEnableUpgrade();
-        
+        MakeFireEffect();
         AudioManager.Instance.PlayEffectClip(_bulletFireSound);
         _curTime = _basicBulletCoolTime*_player.PlayerStat.AttackSpeed;
 
@@ -98,7 +100,10 @@ public class PlayerFire : MonoBehaviour
         }
     }
 
-
+    public void MakeFireEffect()
+    { 
+        PoolManager.Instance.VfxPoolFactory.Get(_bulletFireEffect, transform.position, _fireHead.transform.rotation);
+    }
     public void CheckEnableUpgrade()
     {
         if (_player.PlayerStat.BulletCount >= _levelForUpgrade)

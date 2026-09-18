@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5892408546843053325}
   - component: {fileID: 5351399884024266313}
   - component: {fileID: 1378240588215103439}
+  - component: {fileID: 2134159534178869198}
   m_Layer: 0
   m_Name: SquareBarrier
   m_TagString: Untagged
@@ -211,3 +212,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2134159534178869198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442727225114692255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67adba87d17dc594c814c8156c2d9a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectRotator
+  _rotateSpeed: 25
+  _acceleration: 25

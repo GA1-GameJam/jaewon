@@ -46,5 +46,11 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
 
         }
+        else if(other.CompareTag("Wall"))
+        {
+            Instantiate(_playerStat.PlayerDieVfx,transform.position,Quaternion.identity);
+            GameManager.Instance.GameOver();
+            Destroy(gameObject);
+        }
     }
 }

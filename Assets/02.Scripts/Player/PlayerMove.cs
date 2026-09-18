@@ -15,9 +15,16 @@ public class PlayerMove : MonoBehaviour
     {
         if (_moveJoystick == null)
         {
-            GameObject joystickObject = GameObject.Find("moveJoystick");
+            GameObject joystickObject = GameObject.Find("MoveJoystick");
+            if (joystickObject == null)
+            {
+                joystickObject = GameObject.Find("moveJoystick");
+            }
+
             if (joystickObject != null)
+            {
                 _moveJoystick = joystickObject.GetComponent<Joystick>();
+            }
         }
     }
     
