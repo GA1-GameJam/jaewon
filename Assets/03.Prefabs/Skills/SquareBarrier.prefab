@@ -109,6 +109,9 @@ MonoBehaviour:
   _levelForAwakening: 5
   _cooldown: 3
   _scaleMultiplier: 0.4
+  _scaleDownDuration: 0.15
+  _scaleUpDuration: 1
+  _hitEffect: {fileID: 4454377697536815295, guid: 8b5c9350f2b204140915913895328f4f, type: 3}
 --- !u!60 &5351399884024266313
 PolygonCollider2D:
   m_ObjectHideFlags: 0

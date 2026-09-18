@@ -15,7 +15,8 @@ public class SkillColor : MonoBehaviour
     [SerializeField] private Color _endColor = new(2.5f, 0.25f, 0.25f, 1f);
     private SpriteRenderer _spriteRenderer;
     private MaterialPropertyBlock _propertyBlock;
-    
+    private Color _bladeColor;
+    public Color BladeColor=>_bladeColor;
     private void Awake()
     {
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -25,7 +26,7 @@ public class SkillColor : MonoBehaviour
     {
         float normalizedLevel = Mathf.InverseLerp(1f, 5f, level);
         Color bladeColor = Color.Lerp(_startColor, _endColor, normalizedLevel);
-
+        _bladeColor = bladeColor;
         if (_spriteRenderer == null)
         {
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -36,7 +37,7 @@ public class SkillColor : MonoBehaviour
             return;
         }
 
-        _propertyBlock ??= new MaterialPropertyBlock();
+        _propertyBlock = new MaterialPropertyBlock();
         _spriteRenderer.GetPropertyBlock(_propertyBlock);
         _propertyBlock.SetColor(ColorId, bladeColor);
         _propertyBlock.SetColor(BaseColorId, bladeColor);

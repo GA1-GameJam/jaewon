@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5192022498974395109}
   - component: {fileID: 5883205535026565379}
   - component: {fileID: 6101433577942744464}
+  - component: {fileID: 5261923421841323677}
   m_Layer: 7
   m_Name: Blade
   m_TagString: Bullet
@@ -237,3 +238,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blade
   _basicDamage: 300
+  _hitEffect: {fileID: 4454377697536815295, guid: 8b5c9350f2b204140915913895328f4f, type: 3}
+--- !u!114 &5261923421841323677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177808596770465960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbdda9e3cc45e304fa669f386c0e7466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillColor
+  _startColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
+  _endColor: {r: 2.424553, g: 0.10292909, b: 1.5634934, a: 1}

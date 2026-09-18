@@ -7,7 +7,8 @@ public class GeometryBarrier : SkillParent
     [Header("레벨 별 크기 하양율")][SerializeField]private float _scaleMultiplier=0.2f;
     [Header("피격 시 축소 시간")][SerializeField] private float _scaleDownDuration = 0.15f;
     [Header("복구 시간")][SerializeField] private float _scaleUpDuration = 1f;
-
+    [Header("공격시 이펙트")]
+    [SerializeField] private GameObject _hitEffect;
     private Vector3 _currentScale;
     private Player _player;
     private Coroutine _scaleCoroutine;
@@ -135,7 +136,9 @@ public class GeometryBarrier : SkillParent
         {
             PoolManager.Instance.EnemyPoolFactory.Release(other.gameObject);
             GameManager.Instance.CameraShake.Shake(0.2f,0.2f);
-
+            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_hitEffect, transform.position, transform.rotation);
+            
+            
             StartScaleDownToZero();
         }
     }

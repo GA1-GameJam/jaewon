@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7396ecbb647f9704897501249aea2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomingEnemyMove
-  _basicMoveSpeed: 1.5
+  _basicMoveSpeed: 3
 --- !u!114 &6443861315019368561
 MonoBehaviour:
   m_ObjectHideFlags: 0

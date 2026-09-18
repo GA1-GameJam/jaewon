@@ -181,7 +181,7 @@ MonoBehaviour:
   _enhancedLimitedCount: 5
   _enhancedCount: 1
   _bindingSkill: {fileID: 0}
-  _plusMultipier: 0.5
+  _plusMultipier: 0.2
 --- !u!1 &1452527047164325682
 GameObject:
   m_ObjectHideFlags: 0
