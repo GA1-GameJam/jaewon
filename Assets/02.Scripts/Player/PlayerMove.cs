@@ -1,5 +1,5 @@
-using UnityEngine;
 using SimpleInputNamespace;
+using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {

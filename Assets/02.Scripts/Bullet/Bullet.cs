@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour, IPoolable
         AudioManager.Instance.PlayEffectClip(_bulletStat.BulletDestroySound);
         if (_bulletStat != null && _bulletStat.BulletDestroyVfx != null)
         {
-            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletDestroyVfx, transform.position, transform.rotation);
+            GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletHitVfx, transform.position, transform.rotation);
             if (vfx != null)
             {
                 EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
@@ -67,6 +67,18 @@ public class Bullet : MonoBehaviour, IPoolable
             {
                 if (!_isWallPenetrateEnable)
                 {
+                    if (_bulletStat != null && _bulletStat.BulletDestroyVfx != null)
+                    {
+                        GameObject vfx = PoolManager.Instance.VfxPoolFactory.Get(_bulletStat.BulletDestroyVfx, transform.position, transform.rotation);
+                        if (vfx != null)
+                        {
+                            EffectAutoDespawn effect = vfx.GetComponent<EffectAutoDespawn>();
+                            if (effect != null)
+                            {
+                                effect.SetColor(_bulletColor.GetBulletColor);
+                            }
+                        }
+                    }
                     PoolManager.Instance.BulletPoolFactory.Release(gameObject);
 
                 }

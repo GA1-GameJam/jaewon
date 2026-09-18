@@ -13,11 +13,9 @@ public class GameManager : MonoBehaviour
     [Header("배경음악소스")][SerializeField]private  AudioSource _backgroundMusic;
 
     public Player Player => _player;
-    [Header("클릭시 소환 vfx")][SerializeField]private GameObject _clickVfx;
 
     private CameraShake _cameraShake;
     public CameraShake CameraShake => _cameraShake;
-    public GameObject ClickVfx => _clickVfx;
     private void Awake()
     {
         if (_instance == null)

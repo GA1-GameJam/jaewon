@@ -236,6 +236,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d47a9b9172b944580ebdf9214f0338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blade
-  _basicDamage: 30
-  _startColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
-  _endColor: {r: 2.5, g: 0.26178002, b: 2.1751733, a: 1}
+  _basicDamage: 300

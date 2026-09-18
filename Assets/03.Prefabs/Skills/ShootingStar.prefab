@@ -48,7 +48,7 @@ MonoBehaviour:
   _shootingStarPrefab: {fileID: 4606264528693911947, guid: 4354227b7908d2441925bfbac3503cb1, type: 3}
   _spawnCooltime: 4
   _spawnPlusCount: 5
-  _spawnCount: 10
+  _spawnCount: 3
   _awakeningSpawnCount: 5
   _awakeningSpawnCoolTime: 1
   _spawnDistance: 20

@@ -9,9 +9,6 @@ public class EnhanceManager : MonoBehaviour
     
     private EnhancePanelManager _enhancePanelManager;
     public EnhancePanelManager EnhancePanelManager => _enhancePanelManager;
-    [Header("선택시 VFX")][SerializeField]
-    private GameObject _selectVfx;
-    public GameObject SelectVfx => _selectVfx; 
     [Header("경험치량 표시하는 객체 참조")][SerializeField]
     private EnhanceIndicator _enhanceIndicator;
     

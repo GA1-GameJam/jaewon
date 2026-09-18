@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5872784277871665}
   - component: {fileID: 3642890194310010493}
   - component: {fileID: 879577519518397462}
-  - component: {fileID: 974057138710774550}
   m_Layer: 7
   m_Name: NormalBullet
   m_TagString: Bullet
@@ -238,23 +237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletColor
   _startColor: {r: 0.25, g: 2.25, b: 2.5, a: 1}
   _endColor: {r: 2.5, g: 0.5, b: 3, a: 1}
---- !u!114 &974057138710774550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4606264528693911947}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5bf4eedd198e424d8a04c9267078782, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridControl
-  targetCamera: {fileID: 0}
-  textureSize: 512
-  stampSize: 0.045
-  trailStrength: 1
-  trailFade: 0.93
 --- !u!1 &5076568056435751564
 GameObject:
   m_ObjectHideFlags: 0

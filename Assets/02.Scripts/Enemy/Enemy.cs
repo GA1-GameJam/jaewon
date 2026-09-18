@@ -25,9 +25,8 @@ public class Enemy : MonoBehaviour, IPoolable
     public void TakeDamage(float input)
     {
         if (input <= 0f) return;
-
-        Debug.Log(_currentHP);
-        Debug.Log(input);
+        
+  
         _currentHP -= input;
         if (_currentHP <= 0f)
         {

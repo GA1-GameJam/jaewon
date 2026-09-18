@@ -43,9 +43,11 @@ public class MakeEnemyChild : MonoBehaviour
 
         for (int i = 0; i < _count; i++)
         {
+            Vector2 offset = Random.insideUnitCircle * 1.5f;
+
             PoolManager.Instance.EnemyPoolFactory.Get(
                 _enemy,
-                transform.position,
+                transform.position + (Vector3)offset,
                 Quaternion.identity);
         }
     }
